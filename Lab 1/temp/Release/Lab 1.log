@@ -1,0 +1,9 @@
+﻿  array_list.cpp
+E:\Data Stuctures\Lab 1\src\array_list.cpp(21,21): warning C4018: '<': signed/unsigned mismatch
+E:\Data Stuctures\Lab 1\src\array_list.cpp(40,8): warning C4804: '<=': unsafe use of type 'bool' in operation
+E:\Data Stuctures\Lab 1\src\array_list.cpp(40,17): warning C4018: '<=': signed/unsigned mismatch
+E:\Data Stuctures\Lab 1\src\array_list.cpp(47,22): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+E:\Data Stuctures\Lab 1\src\main.cpp(5,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+main.obj : error LNK2001: unresolved external symbol "public: __cdecl ssuds::ArrayList::~ArrayList(void)" (??1ArrayList@ssuds@@QEAA@XZ)
+..\bin\Release\Lab 1.exe : fatal error LNK1120: 1 unresolved externals

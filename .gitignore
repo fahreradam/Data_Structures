@@ -4,3 +4,7 @@
 
 /.vs/Data_Structures/v17
 /Lab 1/build/.vs/Lab 1/v17/ipch/AutoPCH
+/.vs/Data_Structures
+*.db-shm
+*.db-wal
+*.opendb

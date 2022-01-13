@@ -72,7 +72,7 @@ std::string ssuds::ArrayList::get(unsigned int index)
 	return mData[index];
 }
 
-int ssuds::ArrayList::find(std::string search_value, int start_index = 0)
+int ssuds::ArrayList::find(std::string search_value, int start_index)
 {
 	for (int i = start_index; i < mSize; i++)
 	{
@@ -103,7 +103,7 @@ void ssuds::ArrayList::remove(unsigned int index)
 
 void ssuds::ArrayList::remove_all(std::string search_value)
 {
-	while (find(search_value))
+	while (1)
 		remove(find(search_value));
 }
 

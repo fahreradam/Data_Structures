@@ -1,8 +1,7 @@
 ﻿  array_list.cpp
 C:\Users\Adam\Documents\Coding\Data_Structures\Lab 1\src\array_list.cpp(22,21): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Adam\Documents\Coding\Data_Structures\Lab 1\src\array_list.cpp(48,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab 1\src\array_list.cpp(77,30): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab 1\src\array_list.cpp(89,21): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
-  Generating Code...
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 1\src\array_list.cpp(81,40): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 1\src\array_list.cpp(93,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 1\src\array_list.cpp(113,13): warning C4018: '<': signed/unsigned mismatch
   Lab 1.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\Lab 1\bin\Debug\Lab 1.exe

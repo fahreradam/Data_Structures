@@ -74,7 +74,7 @@ std::string ssuds::ArrayList::get(unsigned int index)
 
 int ssuds::ArrayList::find(std::string search_value, int start_index)
 {
-	for (int i = start_index; i < mSize; i++)
+	for (int i = start_index; i >= 0 && i <= mSize; i++)
 	{
 		if (mData[i] == search_value)
 			return i;
@@ -83,7 +83,7 @@ int ssuds::ArrayList::find(std::string search_value, int start_index)
 }
 void ssuds::ArrayList::remove(unsigned int index)
 {
-	if (0 <= index || index <= mSize)
+	if (0 <= index && index <= mSize)
 	{
 		std::string* temp_array = new std::string[mSize + 1];
 		for (int i = 0; i < mSize; i++)
@@ -101,9 +101,18 @@ void ssuds::ArrayList::remove(unsigned int index)
 	}
 }
 
-void ssuds::ArrayList::remove_all(std::string search_value)
+int ssuds::ArrayList::remove_all(std::string search_value)
 {
+	int i = 0;
 	while (1)
-		remove(find(search_value));
+	{
+		if (mSize < find(search_value))
+		{
+			remove(find(search_value));
+			i++;
+		}
+		else
+			return i;
+	}
 }
 

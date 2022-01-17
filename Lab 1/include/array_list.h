@@ -19,7 +19,7 @@ namespace ssuds
 		std::string get(unsigned int index);
 		int find(std::string search_value, int start_index = 0);
 		void remove(unsigned int index);
-		void remove_all(std::string search_value);
+		int remove_all(std::string search_value);
 
 	};
 }

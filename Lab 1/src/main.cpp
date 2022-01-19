@@ -75,8 +75,10 @@ void main()
 	if (input_file.is_open())
 	{
 		int i = 0;
-		while(!input_file.eof())
-			tester.append(std::getline)
+		while (!input_file.eof())
+			std::string line;
+		std::getline(input_file, line);
+			tester.append(line);
 		while (menu_choice != 9)
 		{
 			std::cout << "1		View what's in the array" 

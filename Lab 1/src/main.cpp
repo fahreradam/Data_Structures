@@ -5,27 +5,36 @@ int main()
 {
 	ssuds::ArrayList tester;
 
-	tester.append("1");
-	tester.append("2");
-	tester.append("4");
+	tester.append("Start of array");
+	tester.append("Adam");
+	tester.append("Fahrer");
+	tester.append("end of array");
 
-	std::cout << tester.find("4") << std::endl;
-	std::cout << tester.get(1) << std::endl;
-	tester.insert("3", 2);
-	std::cout << tester.find("4") << std::endl;
+	std::cout << "The size of the array is " << tester.size() << std::endl;
+	
+	std::cout << "" << std::endl;
+	for(int i =0; i < tester.size(); i ++)
+		std::cout << tester.get(i) << std::endl;
+
 	tester.clear();
-
-	tester.insert("start of the array", 0);
-
-	std::cout << tester.get(0) << std::endl;
+	tester.append("start");
 	tester.append("1");
-	tester.append("1st place");
 	tester.append("1");
+	tester.append("1");
+	tester.append("last");
 
-	std::cout << tester.get(1) << std::endl;
+	for (int i = 0; i < tester.size(); i++)
+		std::cout << "index " << i << " is '" << tester.get(i) << "'" << std::endl;
 
-	std::cout << tester.remove_all("1") << std::endl;
-	std::cout << tester.get(0) << std::endl;
+	tester.remove_all("1");
+
+	for (int i = 0; i < tester.size(); i++)
+		std::cout << "index " << i << " is '" << tester.get(i) << "'" << std::endl;
+
+	tester.insert("middle", 1);
+
+	for (int i = 0; i < tester.size(); i++)
+		std::cout << "index " << i << " is '" << tester.get(i) << "'" << std::endl;
 
 
 

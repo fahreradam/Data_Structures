@@ -48,9 +48,15 @@ void ssuds::ArrayList::insert(std::string new_string, unsigned int index)
 			for (int i = 0; i < mSize; i++)
 			{
 				if (i == index)
+				{
 					temp_array[i] = new_string;
-				else
+					temp_array[i + 1] = mData[i];
+				}
+
+				else if (i < index)
 					temp_array[i] = mData[i];
+				else if (i > index)
+					temp_array[i] = mData[i - 1];
 			}
 			delete[] mData;
 			mData = temp_array;
@@ -85,11 +91,13 @@ void ssuds::ArrayList::remove(unsigned int index)
 {
 	if (0 <= index && index <= mSize)
 	{
-		std::string* temp_array = new std::string[mSize + 1];
+		std::string* temp_array = new std::string[mSize];
 		for (int i = 0; i < mSize; i++)
 		{
-			if(i != index)
+			if(i < index)
 				temp_array[i] = mData[i];
+			if(i > index)
+				temp_array[i-1] = mData[i];
 		}
 		delete[] mData;
 		mData = temp_array;
@@ -106,7 +114,7 @@ int ssuds::ArrayList::remove_all(std::string search_value)
 	int i = 0;
 	while (1)
 	{
-		if (mSize < find(search_value))
+		if (mSize >= find(search_value))
 		{
 			remove(find(search_value));
 			i++;

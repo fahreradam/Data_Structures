@@ -1,5 +1,8 @@
 {
-  "ExpandedNodes": [],
-  "SelectedNode": "\\Lab 1.sln",
+  "ExpandedNodes": [
+    "",
+    "\\build"
+  ],
+  "SelectedNode": "\\build\\Lab 1.sln",
   "PreviewInSolutionExplorer": false
 }

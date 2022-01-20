@@ -1,12 +1,22 @@
 #include <iostream>
 #include <array_list.h>
 #include <fstream>
+#include <stdexcept>
 
 
 ssuds::ArrayList::ArrayList()
 {
 	mSize = 0;
 	mData = nullptr;
+}
+
+ssuds::ArrayList::~ArrayList()
+{
+	if (mData != nullptr)
+	{
+		delete[] mData;
+		mData = nullptr;
+	}
 }
 
 void ssuds::ArrayList::append(std::string new_string)
@@ -38,14 +48,14 @@ unsigned int ssuds::ArrayList::size()
 
 void ssuds::ArrayList::insert(std::string new_string, unsigned int index)
 {
-	if (0 <= index || index <= mSize)
+	if (0 <= index && index < mSize)
 	{
 		if (mData == nullptr)
 			ssuds::ArrayList::append(new_string);
 		else
 		{
 			std::string* temp_array = new std::string[mSize + 1];
-			for (int i = 0; i < mSize; i++)
+			for (int i = 0; i <= mSize; i++)
 			{
 				if (i == index)
 				{
@@ -60,6 +70,7 @@ void ssuds::ArrayList::insert(std::string new_string, unsigned int index)
 			}
 			delete[] mData;
 			mData = temp_array;
+			mSize++;
 		}
 	}
 	else
@@ -75,7 +86,10 @@ void ssuds::ArrayList::clear()
 
 std::string ssuds::ArrayList::get(unsigned int index)
 {
-	return mData[index];
+	if (index >= mSize)
+		throw std::out_of_range("index out of range");
+	else
+		return mData[index];
 }
 
 int ssuds::ArrayList::find(std::string search_value, int start_index)
@@ -123,4 +137,6 @@ int ssuds::ArrayList::remove_all(std::string search_value)
 			return i;
 	}
 }
+
+
 

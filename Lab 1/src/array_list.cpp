@@ -137,6 +137,3 @@ int ssuds::ArrayList::remove_all(std::string search_value)
 			return i;
 	}
 }
-
-
-

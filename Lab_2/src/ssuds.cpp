@@ -5,7 +5,10 @@
 #include <array_list.h>
 #include <fstream>
 
+#define MODE = 2
 
+#if MODE == 1
+{ }
 int get_int(std::string prompt, int deflt = -1)
 {
     int result;
@@ -86,7 +89,7 @@ int main()
 
 
     // The "application" problem
-    ssuds::ArrayList database;
+    ssuds::ArrayList<std::string> database;
     std::string database_fname("..\\..\\media\\data.txt");
     std::fstream fp(database_fname, std::ios::in);
     std::cout << "reading initial data" << std::endl;
@@ -170,3 +173,13 @@ int main()
         fp << database.get(i) << std::endl;
     fp.close();
 }
+#else
+
+void main()
+{
+    ssuds::ArrayList<std::string> database;
+
+    database.append("ifnsges");
+}
+
+#endif

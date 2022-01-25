@@ -1,6 +1,5 @@
-#include <array_list.h>
-#include <stdexcept>
 
+/*
 ssuds::ArrayList::ArrayList() : mSize(0), mData(nullptr)
 {
 	// intentionally empty
@@ -146,3 +145,4 @@ int ssuds::ArrayList::size()
 }
 
 
+*/

@@ -1,4 +1,10 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\Lab 2",
+    "\\Lab 2\\build",
+    "\\Lab 2\\src"
+  ],
+  "SelectedNode": "\\Lab 2\\src\\array_list.cpp",
   "PreviewInSolutionExplorer": false
 }

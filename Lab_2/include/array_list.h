@@ -21,6 +21,7 @@ namespace ssuds
 
 	public:
 		/// Default constructor
+
 		ArrayList(int initial_capacity = 5) : mData(nullptr), mSize(0), mCapacity(initial_capacity), start_capacity(initial_capacity)
 		{
 			mData = new T[mCapacity];

@@ -4,9 +4,10 @@
     "\\Lab 1",
     "\\Lab 1\\src",
     "\\Lab_2",
+    "\\Lab_2\\build",
     "\\Lab_2\\include",
     "\\Lab_2\\src"
   ],
-  "SelectedNode": "\\Lab_2\\src\\ssuds.cpp",
+  "SelectedNode": "\\Lab_2\\src\\main.cpp",
   "PreviewInSolutionExplorer": false
 }

@@ -1,6 +1,7 @@
 ﻿  ssuds.cpp
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\src\ssuds.cpp(178,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
 C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\include\array_list.h(185,14): warning C4552: '>>': result of expression not used
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\include\array_list.h(184): message : while compiling class template member function 'void ssuds::ArrayList<std::string>::grow(void)'
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\include\array_list.h(105): message : see reference to function template instantiation 'void ssuds::ArrayList<std::string>::grow(void)' being compiled
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\src\ssuds.cpp(89): message : see reference to class template instantiation 'ssuds::ArrayList<std::string>' being compiled
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\include\array_list.h(184): message : while compiling class template member function 'void ssuds::ArrayList<int>::grow(void)'
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\include\array_list.h(43): message : see reference to function template instantiation 'void ssuds::ArrayList<int>::grow(void)' being compiled
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\src\ssuds.cpp(229): message : see reference to class template instantiation 'ssuds::ArrayList<int>' being compiled
   Lab_2.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\bin\Debug\Lab_2.exe

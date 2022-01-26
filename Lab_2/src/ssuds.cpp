@@ -5,10 +5,9 @@
 #include <array_list.h>
 #include <fstream>
 
-#define MODE = 2
+#define MODE 2
 
 #if MODE == 1
-{ }
 int get_int(std::string prompt, int deflt = -1)
 {
     int result;
@@ -177,9 +176,67 @@ int main()
 
 void main()
 {
-    ssuds::ArrayList<std::string> database;
+    ssuds::ArrayList<std::string> tester;
 
-    database.append("ifnsges");
+    tester.append("Start of array");
+    tester.append("Adam");
+    tester.append("Fahrer");
+    tester.append("end of array");
+
+    std::cout << "The size of the array is " << tester.size() << '\n' << std::endl; // Prints The size of the array is 4 and a new line
+
+    std::cout << tester.get(0) << std::endl; // Prints Start of array
+    std::cout << tester.get(1) << std::endl; // Prints Adam
+    std::cout << tester.get(2) << std::endl; // Prints Fahrer
+    std::cout << tester.get(3) << '\n' << std::endl; // Prints end of array
+
+    tester.clear();			// Clears the array
+
+    tester.append("start");
+    tester.append("1");
+    tester.append("1");
+    tester.append("1");
+    tester.append("last");
+
+    std::cout << tester.get(0) << std::endl; // Prints start
+    std::cout << tester.get(1) << std::endl; // Prints 1
+    std::cout << tester.get(2) << std::endl; // Prints 1
+    std::cout << tester.get(3) << std::endl; // Prints 1
+    std::cout << tester.get(4) << '\n' << std::endl; // Prints last
+
+
+    std::cout << "Removed " << tester.remove_all("1") << " instances of 1" << '\n' << std::endl; // Prints Removed 3 instances of 1
+
+    std::cout << tester.get(0) << std::endl; // Prints start
+    std::cout << tester.get(1) << '\n' << std::endl; // Prints last
+
+
+
+    tester.insert("middle", 1);
+    tester.insert("1", 0);
+    std::cout << tester.size() << '\n' << std::endl; // Prints 4
+
+    std::cout << tester.get(0) << std::endl; // Prints 1
+    std::cout << tester.get(1) << std::endl; // Prints start
+    std::cout << tester.get(2) << std::endl; // Prints middle
+    std::cout << tester.get(3) << '\n' << std::endl; // Prints last
+
+
+    std::cout << tester.size() << "\n" << std::endl; // Prints 4
+
+
+
+    ssuds::ArrayList<int> intbase;
+
+    intbase.append(1);
+    intbase.append(2);
+    intbase.append(3);
+    std::cout << intbase.get(1) << std::endl; // 2
+    std::cout << intbase.find(1) << std::endl; // 0
+    std::cout << intbase.size() << std::endl; // 3
+
+    intbase.clear();
+    std::cout << intbase.size() << std::endl;
 }
 
 #endif

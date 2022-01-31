@@ -7,6 +7,43 @@
 
 #define MODE 2
 
+class Foo
+{
+protected:
+    std::string mString;
+    int mInt;
+
+public:
+    Foo(std::string other, int i) : mString(other), mInt(i)
+    { }
+    Foo() : mString(""), mInt(0)
+    { }
+    void set_string(const std::string& s)
+    {
+        mString = s;
+    }
+    void set_int(int i)
+    {
+        mInt = i;
+    }
+    std::string get_string() const
+    {
+        return mString;
+    }
+    friend std::ostream& operator << (std::ostream& os, const Foo& f)
+    {
+        os << "{Foo-" << f.mString << "-" << f.mInt << "}";
+
+        return os;
+    }
+    bool operator == (const Foo& other)
+    {
+        return mString == other.mString && mInt == other.mInt;
+    }
+};
+
+
+
 #if MODE == 1
 int get_int(std::string prompt, int deflt = -1)
 {
@@ -174,69 +211,37 @@ int main()
 }
 #else
 
-void main()
+int main()
 {
-    ssuds::ArrayList<std::string> tester;
+    ssuds::ArrayList<float> tester;
+    tester.append(4.2f);
+    tester.append(56.2f);
 
-    tester.append("Start of array");
-    tester.append("Adam");
-    tester.append("Fahrer");
-    tester.append("end of array");
+    ssuds::ArrayList<float> tester2(tester);
+    tester2.append(3.24f);
 
-    std::cout << "The size of the array is " << tester.size() << '\n' << std::endl; // Prints The size of the array is 4 and a new line
+    std::cout << tester << std::endl;
+    tester2[0] = 45.3f;
+    std::cout << tester2 << std::endl;
 
-    std::cout << tester.get(0) << std::endl; // Prints Start of array
-    std::cout << tester.get(1) << std::endl; // Prints Adam
-    std::cout << tester.get(2) << std::endl; // Prints Fahrer
-    std::cout << tester.get(3) << '\n' << std::endl; // Prints end of array
+    tester2.clear();
+    tester2.append(24.21);
 
-    tester.clear();			// Clears the array
+    tester2[0] = 256.20f;
 
-    tester.append("start");
-    tester.append("1");
-    tester.append("1");
-    tester.append("1");
-    tester.append("last");
+    std::cout << tester << std::endl;
+    std::cout << tester2 << std::endl;
 
-    std::cout << tester.get(0) << std::endl; // Prints start
-    std::cout << tester.get(1) << std::endl; // Prints 1
-    std::cout << tester.get(2) << std::endl; // Prints 1
-    std::cout << tester.get(3) << std::endl; // Prints 1
-    std::cout << tester.get(4) << '\n' << std::endl; // Prints last
+    tester2 = tester;
+    std::cout << tester2 << std::endl;
 
 
-    std::cout << "Removed " << tester.remove_all("1") << " instances of 1" << '\n' << std::endl; // Prints Removed 3 instances of 1
-
-    std::cout << tester.get(0) << std::endl; // Prints start
-    std::cout << tester.get(1) << '\n' << std::endl; // Prints last
+    tester[0];
 
 
 
-    tester.insert("middle", 1);
-    tester.insert("1", 0);
-    std::cout << tester.size() << '\n' << std::endl; // Prints 4
-
-    std::cout << tester.get(0) << std::endl; // Prints 1
-    std::cout << tester.get(1) << std::endl; // Prints start
-    std::cout << tester.get(2) << std::endl; // Prints middle
-    std::cout << tester.get(3) << '\n' << std::endl; // Prints last
-
-
-    std::cout << tester.size() << "\n" << std::endl; // Prints 4
-
-
-
-    ssuds::ArrayList<int> intbase;
-
-    intbase.append(1);
-    intbase.append(2);
-    intbase.append(3);
-    std::cout << intbase.get(1) << std::endl; // 2
-    std::cout << intbase.find(1) << std::endl; // 0
-    std::cout << intbase.size() << std::endl; // 3
-
-    intbase.clear();
-    std::cout << intbase.size() << std::endl;
 }
+
+
 
 #endif

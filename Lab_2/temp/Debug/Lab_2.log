@@ -1,7 +1,19 @@
-﻿  ssuds.cpp
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\src\ssuds.cpp(178,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\include\array_list.h(185,14): warning C4552: '>>': result of expression not used
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\include\array_list.h(184): message : while compiling class template member function 'void ssuds::ArrayList<int>::grow(void)'
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\include\array_list.h(43): message : see reference to function template instantiation 'void ssuds::ArrayList<int>::grow(void)' being compiled
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\src\ssuds.cpp(229): message : see reference to class template instantiation 'ssuds::ArrayList<int>' being compiled
-  Lab_2.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\bin\Debug\Lab_2.exe
+﻿  main.cpp
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\src\main.cpp(211,25): warning C4305: 'argument': truncation from 'double' to 'const T'
+          with
+          [
+              T=float
+          ]
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\include\array_list.h(114,14): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\include\array_list.h(113): message : while compiling class template member function 'T &ssuds::ArrayList<T>::operator [](unsigned int) const'
+          with
+          [
+              T=float
+          ]
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\src\main.cpp(207): message : see reference to function template instantiation 'T &ssuds::ArrayList<T>::operator [](unsigned int) const' being compiled
+          with
+          [
+              T=float
+          ]
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\src\main.cpp(199): message : see reference to class template instantiation 'ssuds::ArrayList<float>' being compiled
+  Lab_2.vcxproj -> C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\bin\Debug\Lab_2.exe

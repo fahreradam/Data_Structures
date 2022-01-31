@@ -17,7 +17,7 @@ namespace ssuds
 		/// The array of data we're currently holding
 		T * mData;
 		/// Storing the starting capacity for the clear method
-		int start_capacity;
+		const  start_capacity;
 
 	public:
 		/// Default constructor
@@ -84,12 +84,43 @@ namespace ssuds
 		/// </summary>
 		/// <param name="index">the index of the thing to return</param>
 		/// <returns>the value at the given index</returns>
+		friend std::otstream& operator<<(std::ostream& os, const ArrayList& a)
+		{
+			for (int i = 0; i < a.mSize; i++)
+			{
+				os << "[a ArrayList:" << a[i] << "]";
+			}
+			return os;
+		}
+
 		T& operator[](unsigned int index)
 		{
 			if (index >= mSize)
 				throw std::out_of_range("Invalid index: " + std::to_string(index));
 			else
 				return mData[index];
+		}
+
+		ArrayList& operator=(const ArrayList& other)
+		{
+
+			// Throw out OUR mData
+			delete[] mData;
+
+			// Allocate a NEW array (of size big enough all their data)
+			mData = new T[other.mCapacity];
+
+			// Copy over all elements from other to our new array.
+			for (int i = 0; i < other.mSize; i++)
+			{
+				mData[i] = other[i];
+			}
+			// Copy their size to us
+			mSize = other.mSize;
+			// Last step: return us to support "chain assignment"
+			
+			// a = b = c;
+			return *this;
 		}
 
 		/// <summary>

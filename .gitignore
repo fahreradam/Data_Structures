@@ -9,3 +9,4 @@
 *.db-wal
 *.opendb
 Lab_2/build/.vs/Lab_2/v17/.suo
+*.db

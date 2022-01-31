@@ -7,40 +7,7 @@
 
 #define MODE 2
 
-class Foo
-{
-protected:
-    std::string mString;
-    int mInt;
 
-public:
-    Foo(std::string other, int i) : mString(other), mInt(i)
-    { }
-    Foo() : mString(""), mInt(0)
-    { }
-    void set_string(const std::string& s)
-    {
-        mString = s;
-    }
-    void set_int(int i)
-    {
-        mInt = i;
-    }
-    std::string get_string() const
-    {
-        return mString;
-    }
-    friend std::ostream& operator << (std::ostream& os, const Foo& f)
-    {
-        os << "{Foo-" << f.mString << "-" << f.mInt << "}";
-
-        return os;
-    }
-    bool operator == (const Foo& other)
-    {
-        return mString == other.mString && mInt == other.mInt;
-    }
-};
 
 
 
@@ -210,6 +177,41 @@ int main()
     fp.close();
 }
 #else
+class Foo
+{
+protected:
+    std::string mString;
+    int mInt;
+
+public:
+    Foo(std::string other, int i) : mString(other), mInt(i)
+    { }
+    Foo() : mString(""), mInt(0)
+    { }
+    void set_string(const std::string& s)
+    {
+        mString = s;
+    }
+    void set_int(int i)
+    {
+        mInt = i;
+    }
+    std::string get_string() const
+    {
+        return mString;
+    }
+    friend std::ostream& operator << (std::ostream& os, const Foo& f)
+    {
+        os << "Foo-" << f.mString << "-" << f.mInt;
+
+        return os;
+    }
+    bool operator==(const Foo& other)
+    {
+        return mString == other.mString && mInt == other.mInt;
+    }
+
+};
 
 int main()
 {
@@ -217,26 +219,56 @@ int main()
     tester.append(4.2f);
     tester.append(56.2f);
 
-    ssuds::ArrayList<float> tester2(tester);
+    ssuds::ArrayList<float> tester2(tester); // copy constructor
     tester2.append(3.24f);
 
-    std::cout << tester << std::endl;
+    std::cout << tester << std::endl; // [4.2, 56.2]
     tester2[0] = 45.3f;
-    std::cout << tester2 << std::endl;
+    std::cout << tester2 << std::endl; // [45.3, 56.2, 3.24]
 
-    tester2.clear();
+    tester2.clear();  // clear function
     tester2.append(24.21);
 
-    tester2[0] = 256.20f;
+    tester2[0] = 256.20f; // using by reference with the [] operator
 
-    std::cout << tester << std::endl;
-    std::cout << tester2 << std::endl;
+    std::cout << tester << std::endl; // [4.2, 56.2] 
+    std::cout << tester2 << std::endl; // [256.2] testing single item printing
 
-    tester2 = tester;
-    std::cout << tester2 << std::endl;
+    tester2 = tester; // array copy funtion
+    std::cout << tester2 << std::endl; // [4.2, 56.2]
+
+    ssuds::ArrayList<Foo> flist;
+    flist.append(Foo("Bob", 4));
+    Foo temp_foo("Sue", 7);
+    flist.append(temp_foo);
+
+    ssuds::ArrayList<Foo> flist2(flist);
+
+    std::cout << "flist = " << flist << std::endl; // flist = [Foo-Bob-4, Foo-Sue-7]
 
 
-    tester[0];
+    flist.remove_all(Foo("Sue", 7));
+
+    ssuds::ArrayList<float> list1;
+    list1.append(4.3f);
+    list1.append(5.5f);
+    list1.append(6.6f);
+    std::cout << list1[0] << std::endl;		// 4.3
+
+    ssuds::ArrayList<float> list2(list1);	// copy-constructor
+    list2.append(7.7f);
+    std::cout << list2 << std::endl;	// [4.3, 5.5, 6.6, 7.7]
+    std::cout << list1 << std::endl;	// [4.3, 5.5, 6.6]
+    list2 = list1;						// = operator
+    list2.append(8.8f);					
+    std::cout << list2 << std::endl;	// [4.3, 5.5, 6.6, 8.8]
+
+
+    std::cout << list1.find(6.6) << std::endl; // 2
+    std::cout << list2.remove_all(6.6) << std::endl; // 1
+    std::cout << list2 << std::endl;	// [4.3, 5.5, 8.8]
+    std::cout << list1 << std::endl;	// [4.3, 5.5, 6.6]
+
 
 
 

@@ -1,19 +1,29 @@
 ﻿  main.cpp
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\src\main.cpp(211,25): warning C4305: 'argument': truncation from 'double' to 'const T'
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\src\main.cpp(230,25): warning C4305: 'argument': truncation from 'double' to 'const T'
           with
           [
               T=float
           ]
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\include\array_list.h(114,14): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\include\array_list.h(113): message : while compiling class template member function 'T &ssuds::ArrayList<T>::operator [](unsigned int) const'
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\src\main.cpp(267,32): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\src\main.cpp(207): message : see reference to function template instantiation 'T &ssuds::ArrayList<T>::operator [](unsigned int) const' being compiled
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\src\main.cpp(268,38): warning C4305: 'argument': truncation from 'double' to 'const T'
           with
           [
               T=float
           ]
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\src\main.cpp(199): message : see reference to class template instantiation 'ssuds::ArrayList<float>' being compiled
-  Lab_2.vcxproj -> C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab_2\bin\Debug\Lab_2.exe
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\include\array_list.h(114,14): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\include\array_list.h(113): message : while compiling class template member function 'T &ssuds::ArrayList<T>::operator [](unsigned int) const'
+          with
+          [
+              T=float
+          ]
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\src\main.cpp(226): message : see reference to function template instantiation 'T &ssuds::ArrayList<T>::operator [](unsigned int) const' being compiled
+          with
+          [
+              T=float
+          ]
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\src\main.cpp(218): message : see reference to class template instantiation 'ssuds::ArrayList<float>' being compiled
+  Lab_2.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\Lab_2\bin\Debug\Lab_2.exe

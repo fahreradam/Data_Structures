@@ -84,12 +84,12 @@ namespace ssuds
 		/// </summary>
 		/// <param name="index">the index of the thing to return</param>
 		/// <returns>the value at the given index</returns>
-		T get(int index)
+		T& operator[](unsigned int index)
 		{
-			if (index >= mSize || index < 0)
+			if (index >= mSize)
 				throw std::out_of_range("Invalid index: " + std::to_string(index));
-
-			return mData[index];
+			else
+				return mData[index];
 		}
 
 		/// <summary>
@@ -176,6 +176,14 @@ namespace ssuds
 		int size()
 		{
 			return mSize;
+		}
+
+		/// <summary>
+		/// Returns the total space of the current array
+		/// </summary>
+		int capactiy_size()
+		{
+			return mCapacity;
 		}
 	protected:
 		/// <summary>

@@ -271,6 +271,28 @@ int main()
 
 
 
+    std::cout << list1.capactiy_size() << std::endl; // 5
+
+    list1.append(1);
+    list1.append(1);
+    list1.append(1);
+    list1.append(1);
+    list1.append(1);
+    list1.append(1);
+    std::cout << list1 << std::endl; // [4.3, 5.5, 6.6, 1, 1, 1, 1, 1, 1]
+
+    std::cout << list1.capactiy_size() << std::endl; // 10
+    std::cout << list1.size() << std::endl; // 9
+    std::cout << list1.remove_all(1) << std::endl; // 6
+    std::cout << list1.capactiy_size() << std::endl; // 5
+    std::cout << list1.size() << std::endl; // 3
+
+    std::cout << list1 << std::endl; // [4.3, 5.5, 6.6]
+
+
+
+
+
 
 }
 

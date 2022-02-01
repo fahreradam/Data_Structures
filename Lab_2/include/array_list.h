@@ -183,10 +183,11 @@ namespace ssuds
 
 			// Decrement our size
 			mSize--;
-			mCapacity >>= 1;
+			
 
-			if (mCapacity >> 1 < mSize && mCapacity > start_capacity)
+			if (mCapacity >> 1 > mSize && mCapacity > start_capacity)
 			{
+				mCapacity >>= 1;
 				T* new_array = new T[mCapacity];
 				for (int i = 0; i < mSize; i++)
 					new_array[i] = mData[i];

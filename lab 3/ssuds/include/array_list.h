@@ -34,18 +34,21 @@ namespace ssuds
 		class ArrayListIterator
 		{
 		protected:
-			? ? ? attributes;
+			int mCurPostion;
+			ArrayList* mArrayListPtr;
 
 		public:
-			ArrayListIterator(? ? ? )
+			ArrayListIterator(Arraylist * the_array, int start_pos)
 			{
-				? ? ?
+				mCurPostion = start_pos;
+				mArrayListPtr = the_array;
 			}
 
 			bool operator!=(const ArrayListIterator& other)
 			{
 				// Are we not equal to this other iterator?
-				? ? ?
+
+				return !((*this) == other);
 			}
 
 			// Overload the dereference operator
@@ -53,29 +56,53 @@ namespace ssuds
 			{
 				// Return a reference to the "current" thing this
 				// iterator is "pointing" to
-				? ? ?
+				return mArrayListPtr->mData[mCurPostion];
+
 			}
 
 			void operator++()
 			{
 				// Advance the iterator by using ++it
-				? ?
+				mCurPostion++;
 			}
 
 			void operator++(int dummy)
 			{
 				// Advance the iterator by using it++
 				// (optional)
-				? ? ?
+				dummy++;
 			}
 
 			ArrayListIterator operator+(int offset)
 			{
 				// Create a new iterator which is offset elements
 				// from *our* current position
-				? ? ?
+				return ArrayListIterator(mArrayListPtr, offset + mCurPostion);
 			}
 		};
+
+		ArrayListIterator begin()
+		{
+			// "this" is a pointer to the ArrayList instance that
+			// called the begin method.
+			return ArrayListIterator(this, 0);
+		}
+
+		ArrayListIterator end()
+		{
+			return ArrayListIterator(this, mSize);
+		}
+
+		ArrayListIterator rbegin()
+		{
+
+		}
+
+		ArrayListIterator rend()
+		{
+
+		}
+
 
 
 		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

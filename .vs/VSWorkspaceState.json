@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\lab02_soln_clean",
-    "\\lab02_soln_clean\\ssuds",
-    "\\lab02_soln_clean\\ssuds\\build",
-    "\\lab02_soln_clean\\ssuds\\build\\vs2022",
-    "\\lab02_soln_clean\\ssuds\\src",
+    "\\lab 3",
+    "\\lab 3\\ssuds",
+    "\\lab 3\\ssuds\\build",
+    "\\lab 3\\ssuds\\build\\vs2022",
+    "\\lab 3\\ssuds\\include",
     "\\Lab_2",
     "\\Lab_2\\build",
     "\\Lab_2\\include",
     "\\Lab_2\\src"
   ],
-  "SelectedNode": "\\lab02_soln_clean\\ssuds\\build\\vs2022\\ssuds.sln",
+  "SelectedNode": "\\lab 3\\ssuds\\include\\array_list.h",
   "PreviewInSolutionExplorer": false
 }

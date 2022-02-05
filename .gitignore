@@ -10,3 +10,11 @@
 *.opendb
 Lab_2/build/.vs/Lab_2/v17/.suo
 *.db
+*.sqlite
+*.ipch
+*.db
+lab 3/ssuds/build/vs2022/.vs/ssuds/v17/Browse.VC.db
+.vs/slnx.sqlite
+lab 3/ssuds/build/vs2022/.vs/ssuds/project-colors.json
+*.json
+lab 3/ssuds/build/vs2022/.vs/ssuds/v17/.suo

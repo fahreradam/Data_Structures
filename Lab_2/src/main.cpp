@@ -7,6 +7,10 @@
 
 #define MODE 2
 
+
+
+
+
 #if MODE == 1
 int get_int(std::string prompt, int deflt = -1)
 {
@@ -173,70 +177,125 @@ int main()
     fp.close();
 }
 #else
-
-void main()
+class Foo
 {
-    ssuds::ArrayList<std::string> tester;
+protected:
+    std::string mString;
+    int mInt;
 
-    tester.append("Start of array");
-    tester.append("Adam");
-    tester.append("Fahrer");
-    tester.append("end of array");
+public:
+    Foo(std::string other, int i) : mString(other), mInt(i)
+    { }
+    Foo() : mString(""), mInt(0)
+    { }
+    void set_string(const std::string& s)
+    {
+        mString = s;
+    }
+    void set_int(int i)
+    {
+        mInt = i;
+    }
+    std::string get_string() const
+    {
+        return mString;
+    }
+    friend std::ostream& operator << (std::ostream& os, const Foo& f)
+    {
+        os << "Foo-" << f.mString << "-" << f.mInt;
 
-    std::cout << "The size of the array is " << tester.size() << '\n' << std::endl; // Prints The size of the array is 4 and a new line
+        return os;
+    }
+    bool operator==(const Foo& other)
+    {
+        return mString == other.mString && mInt == other.mInt;
+    }
 
-    std::cout << tester.get(0) << std::endl; // Prints Start of array
-    std::cout << tester.get(1) << std::endl; // Prints Adam
-    std::cout << tester.get(2) << std::endl; // Prints Fahrer
-    std::cout << tester.get(3) << '\n' << std::endl; // Prints end of array
+};
 
-    tester.clear();			// Clears the array
+int main()
+{
+    ssuds::ArrayList<float> tester;
+    tester.append(4.2f);
+    tester.append(56.2f);
 
-    tester.append("start");
-    tester.append("1");
-    tester.append("1");
-    tester.append("1");
-    tester.append("last");
+    ssuds::ArrayList<float> tester2(tester); // copy constructor
+    tester2.append(3.24f);
 
-    std::cout << tester.get(0) << std::endl; // Prints start
-    std::cout << tester.get(1) << std::endl; // Prints 1
-    std::cout << tester.get(2) << std::endl; // Prints 1
-    std::cout << tester.get(3) << std::endl; // Prints 1
-    std::cout << tester.get(4) << '\n' << std::endl; // Prints last
+    std::cout << tester << std::endl; // [4.2, 56.2]
+    tester2[0] = 45.3f;
+    std::cout << tester2 << std::endl; // [45.3, 56.2, 3.24]
 
+    tester2.clear();  // clear function
+    tester2.append(24.21);
 
-    std::cout << "Removed " << tester.remove_all("1") << " instances of 1" << '\n' << std::endl; // Prints Removed 3 instances of 1
+    tester2[0] = 256.20f; // using by reference with the [] operator
 
-    std::cout << tester.get(0) << std::endl; // Prints start
-    std::cout << tester.get(1) << '\n' << std::endl; // Prints last
+    std::cout << tester << std::endl; // [4.2, 56.2] 
+    std::cout << tester2 << std::endl; // [256.2] testing single item printing
 
+    tester2 = tester; // array copy funtion
+    std::cout << tester2 << std::endl; // [4.2, 56.2]
 
+    ssuds::ArrayList<Foo> flist;
+    flist.append(Foo("Bob", 4));
+    Foo temp_foo("Sue", 7);
+    flist.append(temp_foo);
 
-    tester.insert("middle", 1);
-    tester.insert("1", 0);
-    std::cout << tester.size() << '\n' << std::endl; // Prints 4
+    ssuds::ArrayList<Foo> flist2(flist);
 
-    std::cout << tester.get(0) << std::endl; // Prints 1
-    std::cout << tester.get(1) << std::endl; // Prints start
-    std::cout << tester.get(2) << std::endl; // Prints middle
-    std::cout << tester.get(3) << '\n' << std::endl; // Prints last
-
-
-    std::cout << tester.size() << "\n" << std::endl; // Prints 4
+    std::cout << "flist = " << flist << std::endl; // flist = [Foo-Bob-4, Foo-Sue-7]
 
 
+    flist.remove_all(Foo("Sue", 7));
 
-    ssuds::ArrayList<int> intbase;
+    ssuds::ArrayList<float> list1;
+    list1.append(4.3f);
+    list1.append(5.5f);
+    list1.append(6.6f);
+    std::cout << list1[0] << std::endl;		// 4.3
 
-    intbase.append(1);
-    intbase.append(2);
-    intbase.append(3);
-    std::cout << intbase.get(1) << std::endl; // 2
-    std::cout << intbase.find(1) << std::endl; // 0
-    std::cout << intbase.size() << std::endl; // 3
+    ssuds::ArrayList<float> list2(list1);	// copy-constructor
+    list2.append(7.7f);
+    std::cout << list2 << std::endl;	// [4.3, 5.5, 6.6, 7.7]
+    std::cout << list1 << std::endl;	// [4.3, 5.5, 6.6]
+    list2 = list1;						// = operator
+    list2.append(8.8f);					
+    std::cout << list2 << std::endl;	// [4.3, 5.5, 6.6, 8.8]
 
-    intbase.clear();
-    std::cout << intbase.size() << std::endl;
+
+    std::cout << list1.find(6.6) << std::endl; // 2
+    std::cout << list2.remove_all(6.6) << std::endl; // 1
+    std::cout << list2 << std::endl;	// [4.3, 5.5, 8.8]
+    std::cout << list1 << std::endl;	// [4.3, 5.5, 6.6]
+
+
+
+    std::cout << list1.capactiy_size() << std::endl; // 5
+
+    list1.append(1);
+    list1.append(1);
+    list1.append(1);
+    list1.append(1);
+    list1.append(1);
+    list1.append(1);
+    std::cout << list1 << std::endl; // [4.3, 5.5, 6.6, 1, 1, 1, 1, 1, 1]
+
+    std::cout << list1.capactiy_size() << std::endl; // 10
+    std::cout << list1.size() << std::endl; // 9
+    std::cout << list1.remove_all(1) << std::endl; // 6
+    std::cout << list1.capactiy_size() << std::endl; // 5
+    std::cout << list1.size() << std::endl; // 3
+
+    std::cout << list1 << std::endl; // [4.3, 5.5, 6.6]
+
+
+
+
+
+
 }
+
+
 
 #endif

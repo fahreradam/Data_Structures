@@ -17,15 +17,24 @@ namespace ssuds
 		/// The array of data we're currently holding
 		T * mData;
 		/// Storing the starting capacity for the clear method
-		int start_capacity;
+		static const int start_capacity = 5;
 
 	public:
 		/// Default constructor
 
-		ArrayList(int initial_capacity = 5) : mData(nullptr), mSize(0), mCapacity(initial_capacity), start_capacity(initial_capacity)
+		ArrayList(const ArrayList& other) : mData(nullptr), mSize(other.mSize), mCapacity(other.mCapacity)
 		{
 			mData = new T[mCapacity];
+			for (int i = 0; i < other.mSize; i++)
+				mData[i] = other.mData[i];
 		}
+
+		ArrayList() : mData(nullptr), mSize(0), mCapacity(start_capacity)
+		{
+			mData = new T[start_capacity];
+		}
+
+		
 
 		/// Destructor
 		~ArrayList()
@@ -37,7 +46,7 @@ namespace ssuds
 		///  Inserts a new element at the end of the array
 		/// </summary>
 		/// <param name="val">the new value to add</param>
-		void append(T new_val)
+		void append(const T& new_val)
 		{
 			if (mSize == mCapacity)
 			{
@@ -65,7 +74,7 @@ namespace ssuds
 		/// <param name="val">the value to search for</param>
 		/// <param name="start_index">the index to start searching at</param>
 		/// <returns></returns>
-		int find(T val, int start_index = 0)
+		int find(T val, int start_index = 0) const
 		{
 			if (start_index >= mSize || start_index < 0)
 				throw std::out_of_range("Invalid index: " + std::to_string(start_index));
@@ -84,7 +93,23 @@ namespace ssuds
 		/// </summary>
 		/// <param name="index">the index of the thing to return</param>
 		/// <returns>the value at the given index</returns>
-		T& operator[](unsigned int index)
+		friend std::ostream& operator<<(std::ostream& os, const ArrayList& a)
+		{
+			for (int i = 0; i < a.mSize; i++)
+			{
+				if (i == a.mSize - 1 && i == 0)
+					os << "[" << a[i] << "]";
+				else if (i == a.mSize - 1 )
+					os << a[i] << "]";
+				else if (i == 0)
+					os << "[" << a[i] << ", ";
+				else
+					os << a[i] << ", ";
+			}
+			return os;
+		}
+
+		T& operator[](unsigned int index) const
 		{
 			if (index >= mSize)
 				throw std::out_of_range("Invalid index: " + std::to_string(index));
@@ -92,12 +117,34 @@ namespace ssuds
 				return mData[index];
 		}
 
+		ArrayList& operator=(const ArrayList& other)
+		{
+
+			// Throw out OUR mData
+			delete[] mData;
+
+			// Allocate a NEW array (of size big enough all their data)
+			mData = new T[other.mCapacity];
+
+			// Copy over all elements from other to our new array.
+			for (int i = 0; i < other.mSize; i++)
+			{
+				mData[i] = other[i];
+			}
+			// Copy their size to us
+			mSize = other.mSize;
+			mCapacity = other.mCapacity;
+			// Last step: return us to support "chain assignment"
+			// a = b = c;
+			return *this;
+		}
+
 		/// <summary>
 		/// Inserts a new data item at a given index
 		/// </summary>
 		/// <param name="val">the new value to insert</param>
 		/// <param name="index">the index at which to insert (must be >= 0 and <= size) </param>
-		void insert(T val, int index)
+		void insert(const T& val,const int index)
 		{
 			if (index > mSize)
 				throw std::out_of_range("Invalid index: " + std::to_string(index));
@@ -119,7 +166,7 @@ namespace ssuds
 		/// </summary>
 		/// <param name="index">the index of the thing to remove (will return a std::out_of_bounds exception if invalid (<0 or >= size)</param>
 		/// <returns>the data item that was just removed</returns>
-		T remove(int index)
+		T remove(const int index)
 		{
 			if (index >= mSize || index < 0)
 				throw std::out_of_range("Invalid index: " + std::to_string(index));
@@ -132,14 +179,21 @@ namespace ssuds
 				mData[i] = mData[i + 1];
 
 			// Re-allocate the array (the reverse of a grow operation)
-			T* new_array = new T[mCapacity];
-			for (int i = 0; i < mSize - 1; i++)
-				new_array[i] = mData[i];
-			delete[] mData;
-			mData = new_array;
+			
 
 			// Decrement our size
 			mSize--;
+			
+
+			if (mCapacity >> 1 > mSize && mCapacity > start_capacity)
+			{
+				mCapacity >>= 1;
+				T* new_array = new T[mCapacity];
+				for (int i = 0; i < mSize; i++)
+					new_array[i] = mData[i];
+				delete[] mData;
+				mData = new_array;
+			}
 
 			// Return the result
 			return result;
@@ -150,7 +204,7 @@ namespace ssuds
 		/// </summary>
 		/// <param name="val">the value to remove</param>
 		/// <returns>the number of occurrences of that data item that were removed</returns>
-		int remove_all(T val)
+		int remove_all(const T& val)
 		{
 			int cur_index = 0;
 			int num_removed = 0;
@@ -173,7 +227,7 @@ namespace ssuds
 		/// Returns the size of the internal array (i.e.) how many things are being stored in the ArrayList
 		/// </summary>
 		/// <returns>the size of the ArrayList</returns>
-		int size()
+		int size() const
 		{
 			return mSize;
 		}
@@ -181,7 +235,7 @@ namespace ssuds
 		/// <summary>
 		/// Returns the total space of the current array
 		/// </summary>
-		int capactiy_size()
+		int capactiy_size() const
 		{
 			return mCapacity;
 		}
@@ -191,7 +245,7 @@ namespace ssuds
 		/// </summary>
 		void grow()
 		{
-			mCapacity >> 2;
+			mCapacity <<= 1;
 			T* bigger_array = new T[mCapacity];
 			for (int i = 0; i < mSize; i++)
 				bigger_array[i] = mData[i];

@@ -83,6 +83,7 @@ TEST(ArrayListTests, IteratorTest)
     it++;
     EXPECT_EQ(it != ilist.end(), false);
 
+    // Testing rbegin
 
     // Testing rbegin
     ilist.clear();
@@ -104,7 +105,6 @@ TEST(ArrayListTests, IteratorTest)
 
 }
 
-// create func for move constructor
 ssuds::ArrayList<int>func()
 {
     ssuds::ArrayList<int>temp;

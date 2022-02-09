@@ -1,2 +1,9 @@
-﻿  TestArraylist.cpp
-  ssuds.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\lab 3\ssuds\bin\vs2022\Debug\ssuds_d.exe
+﻿  ssuds.cpp
+  TestArraylist.cpp
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\lab 3\ssuds\include\array_list.h(90,17): warning C4552: '+': result of expression not used
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\lab 3\ssuds\include\array_list.h(86): message : while compiling class template member function 'void ssuds::ArrayList<int>::ArrayListIterator::operator ++(int)'
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\lab 3\ssuds\build\vs2022\TestArraylist.cpp(76): message : see reference to function template instantiation 'void ssuds::ArrayList<int>::ArrayListIterator::operator ++(int)' being compiled
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\lab 3\ssuds\build\vs2022\TestArraylist.cpp(65): message : see reference to class template instantiation 'ssuds::ArrayList<int>::ArrayListIterator' being compiled
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\lab 3\ssuds\include\array_list.h(92,17): warning C4552: '-': result of expression not used
+  Generating Code...
+  ssuds.vcxproj -> C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\lab 3\ssuds\bin\vs2022\Debug\ssuds_d.exe

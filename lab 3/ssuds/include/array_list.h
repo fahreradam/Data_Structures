@@ -36,12 +36,14 @@ namespace ssuds
 		protected:
 			int mCurPostion;
 			ArrayList* mArrayListPtr;
+			int mDirection;
 
 		public:
-			ArrayListIterator(Arraylist * the_array, int start_pos)
+			ArrayListIterator(ArrayList* the_array, int start_pos, int direction)
 			{
 				mCurPostion = start_pos;
 				mArrayListPtr = the_array;
+				mDirection = direction;
 			}
 
 			bool operator!=(const ArrayListIterator& other)
@@ -63,7 +65,10 @@ namespace ssuds
 			void operator++()
 			{
 				// Advance the iterator by using ++it
-				mCurPostion++;
+				if (mDirection == 1)
+					mCurPostion++;
+				if(mDirection == -1)
+					mCurPostion--;
 			}
 
 			void operator++(int dummy)
@@ -85,22 +90,23 @@ namespace ssuds
 		{
 			// "this" is a pointer to the ArrayList instance that
 			// called the begin method.
-			return ArrayListIterator(this, 0);
+			
+			return ArrayListIterator(this, 0, 1);
 		}
 
 		ArrayListIterator end()
 		{
-			return ArrayListIterator(this, mSize);
+			return ArrayListIterator(this, mSize, 1);
 		}
 
 		ArrayListIterator rbegin()
 		{
-
+			return ArrayListIterator(this, mSize, -1);
 		}
 
 		ArrayListIterator rend()
 		{
-
+			return ArrayListIterator(this, 0, -1);
 		}
 
 

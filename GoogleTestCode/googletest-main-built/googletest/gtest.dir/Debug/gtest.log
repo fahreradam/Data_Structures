@@ -1,0 +1,4 @@
+﻿  Building Custom Rule C:/Users/Adam/Documents/Coding/Data_Structures/GoogleTestCode/googletest-main/googletest/CMakeLists.txt
+  gtest-all.cc
+     Creating library C:/Users/Adam/Documents/Coding/Data_Structures/GoogleTestCode/googletest-main-built/lib/Debug/gtest.lib and object C:/Users/Adam/Documents/Coding/Data_Structures/GoogleTestCode/googletest-main-built/lib/Debug/gtest.exp
+  gtest.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\GoogleTestCode\googletest-main-built\bin\Debug\gtest.dll

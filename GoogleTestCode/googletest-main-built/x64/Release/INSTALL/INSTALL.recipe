@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\Adam\Documents\Coding\Data_Structures\GoogleTestCode\googletest-main-built\x64\Release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Adam\Documents\Coding\Data_Structures\GoogleTestCode\googletest-main-built\bin\Release\gmock.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Adam\Documents\Coding\Data_Structures\GoogleTestCode\googletest-main-built\bin\Release\gmock_main.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Adam\Documents\Coding\Data_Structures\GoogleTestCode\googletest-main-built\bin\Release\gtest.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Adam\Documents\Coding\Data_Structures\GoogleTestCode\googletest-main-built\bin\Release\gtest_main.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Adam\Documents\Coding\Data_Structures\GoogleTestCode\googletest-main-built\x64\Release\ALL_BUILD</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Adam\Documents\Coding\Data_Structures\GoogleTestCode\googletest-main-built\x64\Release\INSTALL</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

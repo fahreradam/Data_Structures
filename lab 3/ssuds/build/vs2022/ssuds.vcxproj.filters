@@ -18,6 +18,9 @@
     <ClCompile Include="..\..\src\ssuds.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TestArraylist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\array_list.h">

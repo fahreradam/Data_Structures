@@ -5,6 +5,7 @@
 #include <array_list.h>
 #include <fstream>
 #include <gtest\gtest.h>
+#include <sstream>
 
 // Just a silly class to test that our ArrayList is fully templatized
 //void a_func(Foo f);
@@ -28,24 +29,6 @@ std::ostream& operator<<(std::ostream& os, const Foo& f)
 }
 
 
-TEST(BasicTests, BasicTest01)
-{
-    int x = 47;
-    int y = 47;
-    EXPECT_EQ(x, y) << "They're not equal!!";
 
 
-    ssuds::ArrayList<float> test_list;
-    test_list.append(1.5f);
-    test_list.append(1.5f);
 
-    EXPECT_EQ(test_list[0], test_list[1]);
-}
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-
-    return RUN_ALL_TESTS();
-    
-}

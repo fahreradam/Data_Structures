@@ -36,14 +36,25 @@ namespace ssuds
 		protected:
 			int mCurPostion;
 			ArrayList* mArrayListPtr;
-			int mDirection;
+			bool mDirection;
 
 		public:
-			ArrayListIterator(ArrayList* the_array, int start_pos, int direction)
+			ArrayListIterator()
+			{
+				mCurPostion = 0;
+				mDirection = false;
+			}
+			ArrayListIterator(ArrayList* the_array, int start_pos = 0, bool reverse = false)
 			{
 				mCurPostion = start_pos;
 				mArrayListPtr = the_array;
-				mDirection = direction;
+				mDirection = reverse;
+			}
+
+			bool operator == (const ArrayListIterator& other)
+			{
+				return (mCurPostion == other.mCurPostion && mDirection == other.mDirection && mArrayListPtr == other.mArrayListPtr);
+
 			}
 
 			bool operator!=(const ArrayListIterator& other)
@@ -54,7 +65,7 @@ namespace ssuds
 			}
 
 			// Overload the dereference operator
-			T& operator*()
+			T& operator*() const
 			{
 				// Return a reference to the "current" thing this
 				// iterator is "pointing" to
@@ -65,9 +76,9 @@ namespace ssuds
 			void operator++()
 			{
 				// Advance the iterator by using ++it
-				if (mDirection == 1)
+				if (!mDirection)
 					mCurPostion++;
-				if(mDirection == -1)
+				if (mDirection)
 					mCurPostion--;
 			}
 
@@ -75,10 +86,13 @@ namespace ssuds
 			{
 				// Advance the iterator by using it++
 				// (optional)
-				dummy++;
+				if (!mDirection)
+					mCurPostion++;
+				if (mDirection)
+					mCurPostion--;
 			}
 
-			ArrayListIterator operator+(int offset)
+			ArrayListIterator operator+(int offset) const
 			{
 				// Create a new iterator which is offset elements
 				// from *our* current position
@@ -91,22 +105,22 @@ namespace ssuds
 			// "this" is a pointer to the ArrayList instance that
 			// called the begin method.
 			
-			return ArrayListIterator(this, 0, 1);
+			return ArrayListIterator(this, 0, false);
 		}
 
 		ArrayListIterator end()
 		{
-			return ArrayListIterator(this, mSize, 1);
+			return ArrayListIterator(this, mSize, false);
 		}
 
 		ArrayListIterator rbegin()
 		{
-			return ArrayListIterator(this, mSize, -1);
+			return ArrayListIterator(this, mSize-1, true);
 		}
 
 		ArrayListIterator rend()
 		{
-			return ArrayListIterator(this, 0, -1);
+			return ArrayListIterator(this, -1,true);
 		}
 
 
@@ -177,6 +191,23 @@ namespace ssuds
 			mData = new T[mCapacity];
 			for (int i = 0; i < other.size(); i++)
 				mData[i] = other[i];
+		}
+
+		ArrayList(ArrayList&& other)
+		{
+			// Make the shallow copy, transferother's pointer data to us
+
+			mCapacity = other.mCapacity;
+			mSize = other.mSize;
+			mData = other.mData;
+
+			other.mData = nullptr;
+		}
+
+		ArrayList(const std::initializer_list<T>& ilist) : mSize(0), mCapacity(0), mData(nullptr)
+		{
+			for (T val : ilist)
+				append(val);
 		}
 
 		/// Destructor

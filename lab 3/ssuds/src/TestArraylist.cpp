@@ -5,28 +5,8 @@
 #include <sstream>
 
 
-
-//class ArrayListTests : public ::testing::Test {
-//protected:
-//    void SetUp() override {
-//        a1_.EnArray(1);
-//        a2_.EnArray(2);
-//        a3_.EnArray(3);
-//        a4_.EnArray(4);
-//
-//    }
-//
-//
-//    void TearDown() override {
-//        ssuds::ArrayList<int> a1_;
-//    }
-//};
-
-
-TEST(BasicTests, BasicTest01)
+TEST(ArrayListTest, PrintingAnArray)
 {
-
-
     ssuds::ArrayList<float> test_list;
     test_list.append(4);
     test_list.append(5);
@@ -97,7 +77,7 @@ TEST(ArrayListTests, IteratorTest)
     it++;
     EXPECT_EQ(*it, 5);
 
-    it++;
+    ++it;
     EXPECT_EQ(*it, 4);
 
     it++;
@@ -122,7 +102,7 @@ TEST(ArrayListTests, Constructors)
     std::stringstream ss;
     ss << a;
 
-    //EXPECT_EQ(ss.str(), "[2]"); // Will fail
+    EXPECT_NE(ss.str(), "[2]"); // Will fail
     EXPECT_EQ(ss.str(), "[4]");
     ss.str(std::string());
 
@@ -137,6 +117,36 @@ TEST(ArrayListTests, Constructors)
     EXPECT_EQ(ss.str(), "[1, 2, 3, 4]");
 
 
+}
+
+TEST(ArrayListTests, ArrayListMethods)
+{
+    ssuds::ArrayList<float> a;
+    a.append(4.0f);
+    a.append(8.6f);
+    a.append(34.2f);
+
+    EXPECT_EQ(a[0], 4.0);
+    a[0] = a[1];
+    EXPECT_EQ(a[0], 8.6f); // errored if set to 8.6 and not 8.6f
+
+    EXPECT_EQ(a.find(34.2), 2);
+
+    EXPECT_EQ(a.size(), 3);
+
+    EXPECT_EQ(a.capacity(), 5);
+
+
+    int result = 0;
+    try
+    {
+        a.remove(5);
+    }
+    catch (std::out_of_range)
+    {
+        result = 1;
+    }
+    EXPECT_EQ(result, 1);
 }
 
 int Run_Test(int argc, char** argv)

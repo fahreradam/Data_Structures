@@ -12,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\ssuds.cpp" />
-    <ClCompile Include="TestArraylist.cpp" />
+    <ClCompile Include="..\..\src\TestArraylist.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\array_list.h" />

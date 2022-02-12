@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\src\ssuds.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestArraylist.cpp">
+    <ClCompile Include="..\..\src\TestArraylist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

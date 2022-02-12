@@ -51,13 +51,13 @@ namespace ssuds
 				mDirection = reverse;
 			}
 
-			bool operator == (const ArrayListIterator& other)
+			bool operator == (const ArrayListIterator& other) const
 			{
 				return (mCurPostion == other.mCurPostion && mDirection == other.mDirection && mArrayListPtr == other.mArrayListPtr);
 
 			}
 
-			bool operator!=(const ArrayListIterator& other)
+			bool operator!=(const ArrayListIterator& other) const
 			{
 				// Are we not equal to this other iterator?
 
@@ -357,6 +357,11 @@ namespace ssuds
 		int size() const
 		{
 			return mSize;
+		}
+
+		int capacity() const
+		{
+			return mCapacity;
 		}
 
 

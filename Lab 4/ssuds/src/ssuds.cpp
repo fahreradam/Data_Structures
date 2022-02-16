@@ -34,6 +34,7 @@ std::ostream& operator<<(std::ostream& os, const Foo& f)
 int main()
 {
     // Invoke all google test fixtures we've registered
+    int num_ops;
     testing::InitGoogleTest();
     RUN_ALL_TESTS();
 }

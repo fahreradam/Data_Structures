@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <array_list.h>
+#include <array_list_utilities.h>
 
 #define EXECUTE_ARRAY_LIST_TESTS 1
 #if EXECUTE_ARRAY_LIST_TESTS
@@ -172,5 +173,19 @@ TEST_F(ArrayListTestFixture, MoveConstructor)
 	my_arr.remove(0);
 	EXPECT_EQ(my_arr.size(), 1);
 }
+
+TEST_F(ArrayListTestFixture, Utilities)
+{
+	ssuds::ArrayList<float> flist = { 3.1f, 2.2f, 5.5f, 1.3f, -0.1f, 9.9f, 4.2f };
+
+	ssuds::bubble_sort(flist, ssuds::SortType::ASCENDING);
+	std::stringstream ss;
+	ss << flist;
+	EXPECT_EQ(ss.str(), "[-0.1, 1.3, 2.2, 3.1, 4.2, 5.5, 9.9]");
+	int pos = ssuds::binary_search(flist, 5.5f);
+	EXPECT_EQ(pos, 5);
+}
+
+
 
 #endif

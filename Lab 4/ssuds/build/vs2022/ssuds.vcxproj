@@ -16,7 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\array_list.h" />
-    <ClInclude Include="arrray_list_utilities.h" />
+    <ClInclude Include="..\..\include\array_list_utilities.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -1,17 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\lab 3\\ssuds",
-    "\\lab 3\\ssuds\\include",
     "\\Lab 4",
     "\\Lab 4\\ssuds",
     "\\Lab 4\\ssuds\\build",
     "\\Lab 4\\ssuds\\build\\vs2022",
-    "\\Lab 4\\ssuds\\src",
-    "\\Lab_2\\build",
-    "\\Lab_2\\include",
-    "\\Lab_2\\src"
+    "\\Lab 4\\ssuds\\include",
+    "\\Lab 4\\ssuds\\src"
   ],
-  "SelectedNode": "\\Lab 4\\ssuds\\src\\array_list_tests.cpp",
+  "SelectedNode": "\\Lab 4\\ssuds\\include\\array_list.h",
   "PreviewInSolutionExplorer": false
 }

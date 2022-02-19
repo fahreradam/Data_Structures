@@ -1,2 +1,15 @@
 ﻿  array_list_tests.cpp
-  ssuds.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\Lab 4\ssuds\bin\vs2022\Debug\ssuds_d.exe
+C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(21,32): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\src\array_list_tests.cpp(181): message : see reference to function template instantiation 'void ssuds::bubble_sort<float>(const ssuds::ArrayList<float> &,ssuds::SortType,int *)' being compiled
+C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(21,23): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(21,1): error C2660: 'std::swap': function does not take 3 arguments
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\thread(240,13): message : see declaration of 'std::swap'
+C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\src\array_list_tests.cpp(190): message : see reference to function template instantiation 'void ssuds::bubble_sort<std::string>(const ssuds::ArrayList<std::string> &,ssuds::SortType,int *)' being compiled

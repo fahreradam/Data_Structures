@@ -7,7 +7,7 @@ namespace ssuds
 {
 	enum class SortType { ASCENDING, DESCENDING };
 	template <class T>
-	void bubble_sort(ssuds::ArrayList<T>& list, ssuds::SortType tp, int* num_ops = nullptr)
+	void bubble_sort(const ssuds::ArrayList<T>& list, SortType tp, int* num_ops = nullptr)
 	{
 
 		int n = list.size();
@@ -18,9 +18,7 @@ namespace ssuds
 			{
 				if (out_of_order(tp, list[j], list[j + 1])) 
 				{
-					T temp = list[j];
-					list[j] = list[j + 1];
-					list[j + 1] = temp;
+					swap(list, list[i], list[j]);
 					is_sorted = false;
 				}
 			}
@@ -60,10 +58,50 @@ namespace ssuds
 		{
 			std::uniform_int_distribution<int> distribution(0, i); // found from https://www.cplusplus.com/reference/random/
 			int j = distribution(generator);
-			T temp = list[i];
-			list[i] = list[j];
-			list[j] = temp;
+			swap(list, list[i], list[j]);
 		}
 	}
+	//template<class T>
+	//void random_list(ssuds::ArrayList<T>& list, unsigned int num_size)
+	//{
+	//	 
+	//}
 
+	template<class T>
+	void qsort(ssuds::ArrayList<T> list)
+	{
+		qsort_recursive(list, 0, list.size() - 1);
+	}
+	template<class T>
+	ssuds::ArrayList<T> qsort_recursive(ssuds::ArrayList<T> list, int left, int right)
+	{
+		if (left >= right);
+		{
+			return this;
+		}
+		int pivot_index = pivot(list, left, right);
+		qsort_recursive(list, pivot_index - 1);
+		qsort_recursive(list, pivot_index + 1, right);
+	}
+	template<class T>
+	int pivot(ssuds::ArrayList<T> list, int left, int right)
+	{
+		int pivot_val = list[right];
+		int processed_index = left - 1;
+		int cur_index = left;
+		while (cur_index <= right)
+		{
+			processed_index++;
+
+		}
+
+	}
+
+	template<class T>
+	void swap(ssuds::ArrayList<T> list, int val1, int val2)
+	{
+		T temp = list[val1];
+		list[val1] = list[val2];
+		list[val2] = temp;
+	}
 }

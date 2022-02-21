@@ -20,6 +20,7 @@ namespace ssuds
 				{
 					swap_list(list, j, j+1);
 					is_sorted = false;
+					num_ops++;
 				}
 			}
 		}
@@ -61,11 +62,17 @@ namespace ssuds
 			swap_list(list, i, j);
 		}
 	}
-	//template<class T>
-	//void random_list(ssuds::ArrayList<T>& list, unsigned int num_size)
-	//{
-	//	 
-	//}
+	template<class T>
+	void random_list(ssuds::ArrayList<T>& list, const int num_size)
+	{
+		std::default_random_engine generator;
+		for (int i = 0; i < num_size; i++)
+		{
+			std::uniform_real_distribution<float> distribution(0, 9);
+			float j = distribution(generator);
+			list.append(j);
+		}
+	}
 
 	template<class T>
 	void qsort(const ssuds::ArrayList<T>& list)
@@ -108,7 +115,4 @@ namespace ssuds
 		list[val1] = list[val2];
 		list[val2] = temp;
 	}
-
-	template<class T>
-	void random_list()
 }

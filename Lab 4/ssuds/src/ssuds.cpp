@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <gtest/gtest.h>
+#include <array_list_utilities.h>
 
 
 // Just a silly class to test that our ArrayList is fully templatized.  I put it here rather than
@@ -34,11 +35,36 @@ std::ostream& operator<<(std::ostream& os, const Foo& f)
 int main()
 {
     // Invoke all google test fixtures we've registered
-    int num_ops;
     testing::InitGoogleTest();
     RUN_ALL_TESTS();
-    ssuds::ArrayList<std::string> output = {};
-    ssuds::ArrayList<float> testing_list;
-    std::fstream input_file("..\\..\\media\\data.txt", std::ios::in);
+    ssuds::ArrayList<std::string> header = {"SortType","Numb_Items","Iterations", "Time"};
+    std::fstream output_file("..\\..\\media\\data.txt", std::ios::out);
+    int i = 1000;
+    int n = 1000;
+    int* num_ops = 0;
+
+    std::default_random_engine generator;
+    
+
+
+    while (i < 20000)
+    {
+        std::uniform_int_distribution<int> distribution(n, i);
+        int j = distribution(generator);
+
+        ssuds::ArrayList<float> testing_list;
+        ssuds::random_list(testing_list, j);
+        ssuds::shuffle(testing_list);
+        ssuds::ArrayList<float> testing_list2(testing_list);
+        ssuds::qsort(testing_list);
+        ssuds::bubble_sort(testing_list2, ssuds::SortType::ASCENDING, num_ops);
+        i += 1000;
+    }
+
+
+
+
+
+    
 
 }

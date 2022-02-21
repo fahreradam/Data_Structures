@@ -55,7 +55,7 @@ namespace ssuds
 	{
 		std::default_random_engine generator;
 		int n = list.size();
-		for (unsigned int i = 0; i < n; i++)
+		for (unsigned int i = n-1; i > 0; i--)
 		{
 			std::uniform_int_distribution<int> distribution(0, i); // found from https://www.cplusplus.com/reference/random/
 			int j = distribution(generator);
@@ -65,46 +65,75 @@ namespace ssuds
 	template<class T>
 	void random_list(ssuds::ArrayList<T>& list, const int num_size)
 	{
+		list.clear();
 		std::default_random_engine generator;
 		for (int i = 0; i < num_size; i++)
 		{
-			std::uniform_real_distribution<float> distribution(0, 9);
+			std::uniform_real_distribution<float> distribution(0, 1000);
 			float j = distribution(generator);
 			list.append(j);
 		}
 	}
 
 	template<class T>
-	void qsort(const ssuds::ArrayList<T>& list)
+	int qsort(const ssuds::ArrayList<T>& list, ssuds::SortType tp)
 	{
-		qsort_recursive(list, 0, list.size() - 1);
+		int num_swap = 0;
+		qsort_recursive(list, 0, tp, list.size() - 1, num_swap);
+		return num_swap;
 	}
 	template<class T>
-	ssuds::ArrayList<T> qsort_recursive(const ssuds::ArrayList<T>& list, const int left, const int right)
+	void qsort_recursive(const ssuds::ArrayList<T>& list, ssuds::SortType tp, const int left, const int right, int num_swap = NULL)
 	{
 		if (left >= right)
 		{
-			return list;
+			return;
 		}
-		int pivot_index = pivot(list, left, right);
-		qsort_recursive(list, left, pivot_index - 1);
-		qsort_recursive(list, pivot_index + 1, right);
+		int pivot_index = pivot(list,tp, left, right);
+		qsort_recursive(list,tp, left, pivot_index - 1);
+		qsort_recursive(list,tp, pivot_index + 1, right);
 	}
 	template<class T>
-	int pivot(const ssuds::ArrayList<T>& list, const int left, const int right)
+	int pivot(const ssuds::ArrayList<T>& list, ssuds::SortType tp, const int left, const int right, int num_swap = NULL)
 	{
 		T pivot_val = list[right];
 		int processed_index = left - 1;
 		int cur_index = left;
-		while (cur_index < right)
+		if (tp == ssuds::SortType::ASCENDING)
 		{
+			while (cur_index < right)
+			{
+				if (list[cur_index] <= pivot_val)
+				{
+					processed_index++;
+					swap_list(list, cur_index, processed_index);
+					num_swap++;
+				}
+				cur_index++;
+			}
+
 			processed_index++;
-			swap_list(list, cur_index, processed_index);
-			cur_index++;
+			swap_list(list, processed_index, right);
+			num_swap;
+			return processed_index;
 		}
-		processed_index++;
-		swap_list(list, processed_index, right);
-		return processed_index;
+		else
+		{
+			while (cur_index > right)
+			{
+				if (list[cur_index] <= pivot_val)
+				{
+					processed_index++;
+					swap_list(list, cur_index, processed_index);
+				}
+				cur_index++;
+			}
+
+			processed_index++;
+			swap_list(list, processed_index, right);
+			return processed_index;
+		}
+		
 
 	}
 

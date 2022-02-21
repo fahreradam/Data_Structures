@@ -1,7 +1,11 @@
 ﻿  array_list_tests.cpp
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,3): error C2672: 'qsort_recursive': no matching overloaded function found
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\src\array_list_tests.cpp(198): message : see reference to function template instantiation 'int ssuds::qsort<float>(const ssuds::ArrayList<float> &,ssuds::SortType)' being compiled
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,1): error C2440: 'initializing': cannot convert from 'int' to 'ssuds::SortType'
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,25): message : Conversion to enumeration type requires an explicit cast (static_cast, C-style cast or function-style cast)
   ssuds.cpp
-C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\src\ssuds.cpp(37,9): warning C4101: 'num_ops': unreferenced local variable
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,3): error C2672: 'qsort_recursive': no matching overloaded function found
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\src\ssuds.cpp(61): message : see reference to function template instantiation 'int ssuds::qsort<float>(const ssuds::ArrayList<float> &,ssuds::SortType)' being compiled
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,1): error C2440: 'initializing': cannot convert from 'int' to 'ssuds::SortType'
+C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,25): message : Conversion to enumeration type requires an explicit cast (static_cast, C-style cast or function-style cast)
   Generating Code...
-C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(85): warning C4715: 'ssuds::qsort_recursive<float>': not all control paths return a value
-C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(85): warning C4715: 'ssuds::qsort_recursive<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >': not all control paths return a value
-  ssuds.vcxproj -> C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\bin\vs2022\Debug\ssuds_d.exe

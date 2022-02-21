@@ -18,6 +18,9 @@
     <ClInclude Include="..\..\include\array_list.h" />
     <ClInclude Include="..\..\include\array_list_utilities.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\media\data.csv" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

@@ -7,6 +7,7 @@
 #include <vector>
 #include <gtest/gtest.h>
 #include <array_list_utilities.h>
+#include <chrono>
 
 
 // Just a silly class to test that our ArrayList is fully templatized.  I put it here rather than
@@ -37,29 +38,38 @@ int main()
     // Invoke all google test fixtures we've registered
     testing::InitGoogleTest();
     RUN_ALL_TESTS();
-    ssuds::ArrayList<std::string> header = {"SortType","Numb_Items","Iterations", "Time"};
-    std::fstream output_file("..\\..\\media\\data.txt", std::ios::out);
+    ssuds::ArrayList<std::string> header = {"Qsort_Numb","Qsort_Time","Qsort_Iterations", "Bubble_Numb", "Bubble_Time", "Bubble_Iterations"};
+    std::ofstream output_file("..\\..\\media\\data.csv");
+    output_file << "Qsort_Numb, Qsort_Time, Qsort_Iterations, Bubble_Numb, Bubble_Time, Bubble_Iterations" << std::endl;
     int i = 1000;
-    int n = 1000;
     int* num_ops = 0;
+    float start_time = 0;
 
     std::default_random_engine generator;
+    std::chrono::time_point<std::chrono::system_clock> start, end;
     
 
 
-    while (i < 20000)
+    while (i <= 5000)
     {
-        std::uniform_int_distribution<int> distribution(n, i);
-        int j = distribution(generator);
-
         ssuds::ArrayList<float> testing_list;
-        ssuds::random_list(testing_list, j);
+        ssuds::random_list(testing_list, i);
         ssuds::shuffle(testing_list);
         ssuds::ArrayList<float> testing_list2(testing_list);
-        ssuds::qsort(testing_list);
+
+        start = std::chrono::system_clock::now();
+        ssuds::qsort(testing_list, ssuds::SortType::ASCENDING);
+        end = std::chrono::system_clock::now();
+
+        std::chrono::duration<double> elapsed_seconds = end - start;
+
+        output_file << i << ", " << elapsed_seconds.count() <<"s, " << num_ops <<", \n";
         ssuds::bubble_sort(testing_list2, ssuds::SortType::ASCENDING, num_ops);
+
+
         i += 1000;
     }
+    output_file.close();
 
 
 

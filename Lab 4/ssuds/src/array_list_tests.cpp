@@ -192,6 +192,22 @@ TEST_F(ArrayListTestFixture, Utilities)
 	ss1 << flist1;
 	EXPECT_EQ(ss1.str(), "[a, b, f, t, w, y, y]");
 
+
+	ssuds::ArrayList<float> flist2 = { 3.1f, 2.2f, 5.5f, 1.3f, -0.1f, 9.9f, 4.2f };
+
+	ssuds::qsort(flist2);
+	std::stringstream ss2;
+	ss2 << flist2;
+	EXPECT_EQ(ss2.str(), "[-0.1, 1.3, 2.2, 3.1, 4.2, 5.5, 9.9]");
+	pos = ssuds::binary_search(flist2, 5.5f);
+	EXPECT_EQ(pos, 5);
+
+	ssuds::ArrayList<std::string> flist3 = { "a", "b", "f", "w", "y", "y", "t" };
+
+	ssuds::qsort(flist3);
+	std::stringstream ss3;
+	ss3 << flist3;
+	EXPECT_EQ(ss3.str(), "[a, b, f, t, w, y, y]");
 }
 
 

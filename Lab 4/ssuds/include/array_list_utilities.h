@@ -108,4 +108,7 @@ namespace ssuds
 		list[val1] = list[val2];
 		list[val2] = temp;
 	}
+
+	template<class T>
+	void random_list()
 }

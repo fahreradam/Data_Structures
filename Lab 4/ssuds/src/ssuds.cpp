@@ -37,4 +37,8 @@ int main()
     int num_ops;
     testing::InitGoogleTest();
     RUN_ALL_TESTS();
+    ssuds::ArrayList<std::string> output = {};
+    ssuds::ArrayList<float> testing_list;
+    std::fstream input_file("..\\..\\media\\data.txt", std::ios::in);
+
 }

@@ -1,1 +1,7 @@
-﻿  ssuds.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\Lab 4\ssuds\bin\vs2022\Debug\ssuds_d.exe
+﻿  array_list_tests.cpp
+  ssuds.cpp
+C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\src\ssuds.cpp(37,9): warning C4101: 'num_ops': unreferenced local variable
+  Generating Code...
+C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(85): warning C4715: 'ssuds::qsort_recursive<float>': not all control paths return a value
+C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(85): warning C4715: 'ssuds::qsort_recursive<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >': not all control paths return a value
+  ssuds.vcxproj -> C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 4\ssuds\bin\vs2022\Debug\ssuds_d.exe

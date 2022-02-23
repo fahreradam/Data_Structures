@@ -38,11 +38,10 @@ int main()
     // Invoke all google test fixtures we've registered
     testing::InitGoogleTest();
     RUN_ALL_TESTS();
-    ssuds::ArrayList<std::string> header = {"Qsort_Numb","Qsort_Time","Qsort_Iterations", "Bubble_Numb", "Bubble_Time", "Bubble_Iterations"};
-    std::ofstream output_file("..\\..\\media\\data.csv");
-    output_file << "Qsort_Numb, Qsort_Time, Qsort_Iterations, Bubble_Numb, Bubble_Time, Bubble_Iterations" << std::endl;
+    std::ofstream output_file("..\\..\\media\\data2.csv");
+    output_file << "Qsort_Numb, Qsort_Time, Qsort_Iterations, Bubble_Numb, Bubble_Time, Bubble_Iterations, BinarySort_Time, BinarySort_Iterations, LinearSearch_Time, LinearSearch_Iterations" << std::endl;
     int i = 1000;
-    int* num_ops = 0;
+    long* num_ops = 0;
     float start_time = 0;
 
     std::default_random_engine generator;
@@ -50,7 +49,7 @@ int main()
     
 
 
-    while (i <= 5000)
+    while (i <= 200000)
     {
         ssuds::ArrayList<float> testing_list;
         ssuds::random_list(testing_list, i);
@@ -58,14 +57,37 @@ int main()
         ssuds::ArrayList<float> testing_list2(testing_list);
 
         start = std::chrono::system_clock::now();
-        ssuds::qsort(testing_list, ssuds::SortType::ASCENDING);
+        int* swap_num = ssuds::qsort(testing_list, ssuds::SortType::ASCENDING);
         end = std::chrono::system_clock::now();
 
         std::chrono::duration<double> elapsed_seconds = end - start;
 
-        output_file << i << ", " << elapsed_seconds.count() <<"s, " << num_ops <<", \n";
+        output_file << i << ", " << elapsed_seconds.count() <<"s, " << swap_num <<", ";
+        
+        start = std::chrono::system_clock::now();
         ssuds::bubble_sort(testing_list2, ssuds::SortType::ASCENDING, num_ops);
+        end = std::chrono::system_clock::now();
 
+        elapsed_seconds = end - start;
+        output_file << i << ", " << elapsed_seconds.count() << "s, " << num_ops << ", ";
+
+
+        num_ops = 0;
+        start = std::chrono::system_clock::now();
+        ssuds::binary_search(testing_list2, testing_list[i/2], num_ops);
+        end = std::chrono::system_clock::now();
+
+        elapsed_seconds = end - start;
+        output_file << elapsed_seconds.count() << "s, " << num_ops << ", ";
+
+        start = std::chrono::system_clock::now();
+        long n = testing_list2.find(testing_list2[i/2]);
+        end = std::chrono::system_clock::now();
+
+        elapsed_seconds = end - start;
+        output_file << elapsed_seconds.count() << "s, " << n << std::endl;
+
+        
 
         i += 1000;
     }

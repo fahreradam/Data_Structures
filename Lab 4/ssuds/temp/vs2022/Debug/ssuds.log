@@ -1,11 +1,2 @@
-﻿  array_list_tests.cpp
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,3): error C2672: 'qsort_recursive': no matching overloaded function found
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\src\array_list_tests.cpp(198): message : see reference to function template instantiation 'int ssuds::qsort<float>(const ssuds::ArrayList<float> &,ssuds::SortType)' being compiled
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,1): error C2440: 'initializing': cannot convert from 'int' to 'ssuds::SortType'
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,25): message : Conversion to enumeration type requires an explicit cast (static_cast, C-style cast or function-style cast)
-  ssuds.cpp
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,3): error C2672: 'qsort_recursive': no matching overloaded function found
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\src\ssuds.cpp(61): message : see reference to function template instantiation 'int ssuds::qsort<float>(const ssuds::ArrayList<float> &,ssuds::SortType)' being compiled
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,1): error C2440: 'initializing': cannot convert from 'int' to 'ssuds::SortType'
-C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 4\ssuds\include\array_list_utilities.h(82,25): message : Conversion to enumeration type requires an explicit cast (static_cast, C-style cast or function-style cast)
-  Generating Code...
+﻿  ssuds.cpp
+  ssuds.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\Lab 4\ssuds\bin\vs2022\Debug\ssuds_d.exe

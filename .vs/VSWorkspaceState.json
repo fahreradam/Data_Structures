@@ -3,12 +3,14 @@
     "",
     "\\Lab 1",
     "\\Lab 1\\src",
+    "\\lab 3",
+    "\\lab 3\\ssuds",
+    "\\lab 3\\ssuds\\include",
+    "\\lab 3\\ssuds\\src",
     "\\Lab 4",
     "\\Lab 4\\ssuds",
-    "\\Lab 4\\ssuds\\build\\vs2022",
-    "\\Lab 4\\ssuds\\include",
     "\\Lab 4\\ssuds\\src"
   ],
-  "SelectedNode": "\\Lab 4\\ssuds\\src\\ssuds.cpp",
+  "SelectedNode": "\\Lab 4\\ssuds\\include\\array_list_utilities.h",
   "PreviewInSolutionExplorer": false
 }

@@ -208,6 +208,20 @@ TEST_F(ArrayListTestFixture, Utilities)
 	std::stringstream ss3;
 	ss3 << flist3;
 	EXPECT_EQ(ss3.str(), "[a, b, f, t, w, y, y]");
+
+	ssuds::ArrayList<std::string> flist4 = { "a", "b", "f", "w", "y", "y", "t" };
+
+	ssuds::qsort(flist4, ssuds::SortType::DESCENDING);
+	std::stringstream ss4;
+	ss4 << flist4;
+	EXPECT_EQ(ss4.str(), "[y, y, w, t, f, b, a]");
+
+	ssuds::ArrayList<std::string> flist5 = { "a", "b", "f", "w", "y", "y", "t" };
+
+	ssuds::bubble_sort(flist5, ssuds::SortType::DESCENDING);
+	std::stringstream ss5;
+	ss5 << flist5;
+	EXPECT_EQ(ss5.str(), "[y, y, w, t, f, b, a]");
 }
 
 

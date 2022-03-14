@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\build"
+    "\\build",
+    "\\src"
   ],
-  "SelectedNode": "\\build\\Lab 1.sln",
+  "SelectedNode": "\\src\\main.cpp",
   "PreviewInSolutionExplorer": false
 }

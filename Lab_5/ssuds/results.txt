@@ -1,0 +1,1463 @@
+SampleSize=1000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 5098 operations
+	Bubblesort: 2ms and 256078 operations
+	BinarySearch: 0ms and 10 operations
+	Linear Search: 0ms and 825 operations
+SampleSize=2000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 11088 operations
+	Bubblesort: 9ms and 988666 operations
+	BinarySearch: 0ms and 11 operations
+	Linear Search: 0ms and 1142 operations
+SampleSize=3000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 24498 operations
+	Bubblesort: 22ms and 2222840 operations
+	BinarySearch: 0ms and 12 operations
+	Linear Search: 0ms and 413 operations
+SampleSize=4000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 30547 operations
+	Bubblesort: 46ms and 4024904 operations
+	BinarySearch: 0ms and 12 operations
+	Linear Search: 0ms and 1509 operations
+SampleSize=5000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 34471 operations
+	Bubblesort: 60ms and 6274361 operations
+	BinarySearch: 0ms and 10 operations
+	Linear Search: 0ms and 862 operations
+SampleSize=6000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 41671 operations
+	Bubblesort: 86ms and 8979031 operations
+	BinarySearch: 0ms and 11 operations
+	Linear Search: 0ms and 2175 operations
+SampleSize=7000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 54012 operations
+	Bubblesort: 118ms and 12390254 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 3277 operations
+SampleSize=8000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 68961 operations
+	Bubblesort: 154ms and 15948649 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 2753 operations
+SampleSize=9000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 81474 operations
+	Bubblesort: 197ms and 20281358 operations
+	BinarySearch: 0ms and 6 operations
+	Linear Search: 0ms and 6608 operations
+SampleSize=10000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 79795 operations
+	Bubblesort: 243ms and 24906889 operations
+	BinarySearch: 0ms and 11 operations
+	Linear Search: 0ms and 5101 operations
+SampleSize=11000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 89035 operations
+	Bubblesort: 298ms and 30060506 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 8378 operations
+SampleSize=12000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 112341 operations
+	Bubblesort: 348ms and 35706721 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 4057 operations
+SampleSize=13000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 104235 operations
+	Bubblesort: 416ms and 42168076 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 3322 operations
+SampleSize=14000
+=========================
+	Copy time: 0ms
+	Quicksort: 0ms and 113879 operations
+	Bubblesort: 474ms and 49030655 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 2300 operations
+SampleSize=15000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 140531 operations
+	Bubblesort: 548ms and 56238052 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 2731 operations
+SampleSize=16000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 133802 operations
+	Bubblesort: 615ms and 64191165 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 10290 operations
+SampleSize=17000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 140258 operations
+	Bubblesort: 700ms and 72241438 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 6401 operations
+SampleSize=18000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 184842 operations
+	Bubblesort: 790ms and 80209243 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 8130 operations
+SampleSize=19000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 162724 operations
+	Bubblesort: 878ms and 90431636 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 8559 operations
+SampleSize=20000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 162072 operations
+	Bubblesort: 985ms and 100130488 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 13746 operations
+SampleSize=21000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 168411 operations
+	Bubblesort: 1097ms and 110517400 operations
+	BinarySearch: 0ms and 12 operations
+	Linear Search: 0ms and 4279 operations
+SampleSize=22000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 176778 operations
+	Bubblesort: 1181ms and 121368163 operations
+	BinarySearch: 0ms and 11 operations
+	Linear Search: 0ms and 17626 operations
+SampleSize=23000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 197479 operations
+	Bubblesort: 1274ms and 133136596 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 6619 operations
+SampleSize=24000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 207356 operations
+	Bubblesort: 1390ms and 143793375 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 20457 operations
+SampleSize=25000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 195654 operations
+	Bubblesort: 1514ms and 156311274 operations
+	BinarySearch: 0ms and 12 operations
+	Linear Search: 0ms and 18620 operations
+SampleSize=26000
+=========================
+	Copy time: 0ms
+	Quicksort: 1ms and 247770 operations
+	Bubblesort: 1645ms and 168904659 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 3341 operations
+SampleSize=27000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 243220 operations
+	Bubblesort: 1758ms and 182432969 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 23351 operations
+SampleSize=28000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 255384 operations
+	Bubblesort: 1926ms and 196731176 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 9652 operations
+SampleSize=29000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 273642 operations
+	Bubblesort: 2104ms and 209989237 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 10629 operations
+SampleSize=30000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 306059 operations
+	Bubblesort: 2213ms and 225097386 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 3227 operations
+SampleSize=31000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 275861 operations
+	Bubblesort: 2361ms and 239937650 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 22435 operations
+SampleSize=32000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 281891 operations
+	Bubblesort: 2503ms and 256100784 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 12398 operations
+SampleSize=33000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 304665 operations
+	Bubblesort: 2681ms and 272540482 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 22897 operations
+SampleSize=34000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 286235 operations
+	Bubblesort: 2852ms and 288798894 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 12297 operations
+SampleSize=35000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 301843 operations
+	Bubblesort: 3009ms and 306056845 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 17166 operations
+SampleSize=36000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 277544 operations
+	Bubblesort: 3152ms and 324759985 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 13653 operations
+SampleSize=37000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 340379 operations
+	Bubblesort: 3369ms and 341944088 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 9509 operations
+SampleSize=38000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 344337 operations
+	Bubblesort: 3549ms and 360511416 operations
+	BinarySearch: 0ms and 12 operations
+	Linear Search: 0ms and 8226 operations
+SampleSize=39000
+=========================
+	Copy time: 0ms
+	Quicksort: 2ms and 374427 operations
+	Bubblesort: 3752ms and 381323224 operations
+	BinarySearch: 0ms and 11 operations
+	Linear Search: 0ms and 20507 operations
+SampleSize=40000
+=========================
+	Copy time: 0ms
+	Quicksort: 3ms and 399335 operations
+	Bubblesort: 3936ms and 397912985 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 27517 operations
+SampleSize=41000
+=========================
+	Copy time: 0ms
+	Quicksort: 3ms and 377367 operations
+	Bubblesort: 4206ms and 419232256 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 31906 operations
+SampleSize=42000
+=========================
+	Copy time: 0ms
+	Quicksort: 3ms and 369810 operations
+	Bubblesort: 4389ms and 441532566 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 14512 operations
+SampleSize=43000
+=========================
+	Copy time: 0ms
+	Quicksort: 3ms and 395367 operations
+	Bubblesort: 4643ms and 461908068 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 28787 operations
+SampleSize=44000
+=========================
+	Copy time: 0ms
+	Quicksort: 3ms and 373890 operations
+	Bubblesort: 4828ms and 482307065 operations
+	BinarySearch: 0ms and 12 operations
+	Linear Search: 0ms and 8817 operations
+SampleSize=45000
+=========================
+	Copy time: 0ms
+	Quicksort: 3ms and 527773 operations
+	Bubblesort: 4949ms and 506405204 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 5060 operations
+SampleSize=46000
+=========================
+	Copy time: 0ms
+	Quicksort: 3ms and 430327 operations
+	Bubblesort: 5184ms and 530722307 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 39468 operations
+SampleSize=47000
+=========================
+	Copy time: 0ms
+	Quicksort: 3ms and 451957 operations
+	Bubblesort: 5518ms and 551356888 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 11150 operations
+SampleSize=48000
+=========================
+	Copy time: 0ms
+	Quicksort: 3ms and 414641 operations
+	Bubblesort: 5700ms and 577254461 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 41542 operations
+SampleSize=49000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 534459 operations
+	Bubblesort: 5923ms and 599666920 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 34432 operations
+SampleSize=50000
+=========================
+	Copy time: 0ms
+	Quicksort: 3ms and 441875 operations
+	Bubblesort: 6150ms and 625862728 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 3325 operations
+SampleSize=51000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 456142 operations
+	Bubblesort: 6396ms and 654404450 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 47965 operations
+SampleSize=52000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 472269 operations
+	Bubblesort: 6655ms and 675652477 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 43516 operations
+SampleSize=53000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 536669 operations
+	Bubblesort: 6932ms and 700503812 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 34284 operations
+SampleSize=54000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 511362 operations
+	Bubblesort: 7192ms and 731803509 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 50313 operations
+SampleSize=55000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 534100 operations
+	Bubblesort: 7437ms and 755514378 operations
+	BinarySearch: 0ms and 11 operations
+	Linear Search: 0ms and 37085 operations
+SampleSize=56000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 532130 operations
+	Bubblesort: 7719ms and 781519265 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 45318 operations
+SampleSize=57000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 536318 operations
+	Bubblesort: 7970ms and 811232227 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 25653 operations
+SampleSize=58000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 634001 operations
+	Bubblesort: 8301ms and 841074222 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 42066 operations
+SampleSize=59000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 538180 operations
+	Bubblesort: 8577ms and 870772306 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 14561 operations
+SampleSize=60000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 583933 operations
+	Bubblesort: 8717ms and 903448786 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 10287 operations
+SampleSize=61000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 615610 operations
+	Bubblesort: 9000ms and 934107049 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 18357 operations
+SampleSize=62000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 513484 operations
+	Bubblesort: 9302ms and 960164785 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 38301 operations
+SampleSize=63000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 549282 operations
+	Bubblesort: 9787ms and 989989357 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 2625 operations
+SampleSize=64000
+=========================
+	Copy time: 0ms
+	Quicksort: 4ms and 614700 operations
+	Bubblesort: 10030ms and 1024685337 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 9206 operations
+SampleSize=65000
+=========================
+	Copy time: 0ms
+	Quicksort: 5ms and 624334 operations
+	Bubblesort: 10398ms and 1056273018 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 35467 operations
+SampleSize=66000
+=========================
+	Copy time: 0ms
+	Quicksort: 5ms and 616977 operations
+	Bubblesort: 10682ms and 1087428220 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 41578 operations
+SampleSize=67000
+=========================
+	Copy time: 0ms
+	Quicksort: 5ms and 625197 operations
+	Bubblesort: 11157ms and 1125436818 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 27558 operations
+SampleSize=68000
+=========================
+	Copy time: 0ms
+	Quicksort: 5ms and 690033 operations
+	Bubblesort: 11566ms and 1154993598 operations
+	BinarySearch: 0ms and 10 operations
+	Linear Search: 0ms and 64478 operations
+SampleSize=69000
+=========================
+	Copy time: 0ms
+	Quicksort: 5ms and 699892 operations
+	Bubblesort: 11698ms and 1189906600 operations
+	BinarySearch: 0ms and 12 operations
+	Linear Search: 0ms and 56818 operations
+SampleSize=70000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 758285 operations
+	Bubblesort: 12066ms and 1224671060 operations
+	BinarySearch: 0ms and 12 operations
+	Linear Search: 0ms and 36382 operations
+SampleSize=71000
+=========================
+	Copy time: 0ms
+	Quicksort: 5ms and 639837 operations
+	Bubblesort: 12431ms and 1260213575 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 24210 operations
+SampleSize=72000
+=========================
+	Copy time: 0ms
+	Quicksort: 5ms and 701852 operations
+	Bubblesort: 12691ms and 1289893415 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 5889 operations
+SampleSize=73000
+=========================
+	Copy time: 0ms
+	Quicksort: 5ms and 683773 operations
+	Bubblesort: 13160ms and 1332322940 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 15723 operations
+SampleSize=74000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 711584 operations
+	Bubblesort: 13510ms and 1366307892 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 55917 operations
+SampleSize=75000
+=========================
+	Copy time: 0ms
+	Quicksort: 5ms and 680276 operations
+	Bubblesort: 13907ms and 1414009719 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 52146 operations
+SampleSize=76000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 767894 operations
+	Bubblesort: 14244ms and 1448604106 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 75180 operations
+SampleSize=77000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 817719 operations
+	Bubblesort: 14611ms and 1479970564 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 49196 operations
+SampleSize=78000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 865993 operations
+	Bubblesort: 14968ms and 1517515170 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 32878 operations
+SampleSize=79000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 763760 operations
+	Bubblesort: 15289ms and 1557773205 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 346 operations
+SampleSize=80000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 790827 operations
+	Bubblesort: 15828ms and 1600907575 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 72412 operations
+SampleSize=81000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 789845 operations
+	Bubblesort: 16208ms and 1644392157 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 71954 operations
+SampleSize=82000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 813073 operations
+	Bubblesort: 16624ms and 1677082392 operations
+	BinarySearch: 0ms and 12 operations
+	Linear Search: 0ms and 32130 operations
+SampleSize=83000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 760904 operations
+	Bubblesort: 17052ms and 1718261327 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 56342 operations
+SampleSize=84000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 778785 operations
+	Bubblesort: 17484ms and 1763948194 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 37843 operations
+SampleSize=85000
+=========================
+	Copy time: 0ms
+	Quicksort: 6ms and 862328 operations
+	Bubblesort: 17761ms and 1807297952 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 15045 operations
+SampleSize=86000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 866649 operations
+	Bubblesort: 18188ms and 1847770907 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 29844 operations
+SampleSize=87000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 850329 operations
+	Bubblesort: 18760ms and 1889384033 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 79392 operations
+SampleSize=88000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 834676 operations
+	Bubblesort: 18986ms and 1935806417 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 34885 operations
+SampleSize=89000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 879039 operations
+	Bubblesort: 19560ms and 1981075070 operations
+	BinarySearch: 0ms and 11 operations
+	Linear Search: 0ms and 38718 operations
+SampleSize=90000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 910400 operations
+	Bubblesort: 19989ms and 2023090854 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 5187 operations
+SampleSize=91000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 1016332 operations
+	Bubblesort: 20532ms and 2063473082 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 88635 operations
+SampleSize=92000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 927939 operations
+	Bubblesort: 20964ms and 2119688972 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 19523 operations
+SampleSize=93000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 844771 operations
+	Bubblesort: 21545ms and -2131608266 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 77101 operations
+SampleSize=94000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 881270 operations
+	Bubblesort: 21843ms and -2092845754 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 89657 operations
+SampleSize=95000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 923520 operations
+	Bubblesort: 22379ms and -2032455436 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 57800 operations
+SampleSize=96000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 997000 operations
+	Bubblesort: 22844ms and -1993773344 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 65894 operations
+SampleSize=97000
+=========================
+	Copy time: 0ms
+	Quicksort: 8ms and 944985 operations
+	Bubblesort: 23482ms and -1942407282 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 38048 operations
+SampleSize=98000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 944795 operations
+	Bubblesort: 24029ms and -1888806667 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 25627 operations
+SampleSize=99000
+=========================
+	Copy time: 0ms
+	Quicksort: 7ms and 974218 operations
+	Bubblesort: 24161ms and -1845108996 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 93020 operations
+SampleSize=100000
+=========================
+	Copy time: 0ms
+	Quicksort: 8ms and 1032435 operations
+	Bubblesort: 24771ms and -1793971150 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 61498 operations
+SampleSize=101000
+=========================
+	Copy time: 0ms
+	Quicksort: 8ms and 1140982 operations
+	Bubblesort: 25162ms and -1746591607 operations
+	BinarySearch: 0ms and 11 operations
+	Linear Search: 0ms and 21549 operations
+SampleSize=102000
+=========================
+	Copy time: 0ms
+	Quicksort: 8ms and 1037440 operations
+	Bubblesort: 25157ms and -1688508139 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 82647 operations
+SampleSize=103000
+=========================
+	Copy time: 0ms
+	Quicksort: 8ms and 1049913 operations
+	Bubblesort: 25671ms and -1640756957 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 82570 operations
+SampleSize=104000
+=========================
+	Copy time: 0ms
+	Quicksort: 8ms and 1060382 operations
+	Bubblesort: 26560ms and -1584301169 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 31125 operations
+SampleSize=105000
+=========================
+	Copy time: 0ms
+	Quicksort: 8ms and 1108945 operations
+	Bubblesort: 27022ms and -1536673479 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 71056 operations
+SampleSize=106000
+=========================
+	Copy time: 0ms
+	Quicksort: 8ms and 966386 operations
+	Bubblesort: 27777ms and -1479034537 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 10752 operations
+SampleSize=107000
+=========================
+	Copy time: 0ms
+	Quicksort: 8ms and 1178023 operations
+	Bubblesort: 28280ms and -1433549234 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 19924 operations
+SampleSize=108000
+=========================
+	Copy time: 0ms
+	Quicksort: 8ms and 1209533 operations
+	Bubblesort: 28735ms and -1368216416 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 67996 operations
+SampleSize=109000
+=========================
+	Copy time: 0ms
+	Quicksort: 9ms and 1053756 operations
+	Bubblesort: 29363ms and -1318040656 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 28664 operations
+SampleSize=110000
+=========================
+	Copy time: 0ms
+	Quicksort: 9ms and 1050312 operations
+	Bubblesort: 29801ms and -1269923364 operations
+	BinarySearch: 0ms and 14 operations
+	Linear Search: 0ms and 68392 operations
+SampleSize=111000
+=========================
+	Copy time: 0ms
+	Quicksort: 9ms and 1127003 operations
+	Bubblesort: 30621ms and -1218288097 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 87108 operations
+SampleSize=112000
+=========================
+	Copy time: 0ms
+	Quicksort: 9ms and 1180954 operations
+	Bubblesort: 31039ms and -1156628990 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 103696 operations
+SampleSize=113000
+=========================
+	Copy time: 0ms
+	Quicksort: 9ms and 1173859 operations
+	Bubblesort: 31103ms and -1092930878 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 50767 operations
+SampleSize=114000
+=========================
+	Copy time: 0ms
+	Quicksort: 9ms and 1294258 operations
+	Bubblesort: 31314ms and -1049460128 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 46981 operations
+SampleSize=115000
+=========================
+	Copy time: 0ms
+	Quicksort: 9ms and 1182204 operations
+	Bubblesort: 32706ms and -980998984 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 102965 operations
+SampleSize=116000
+=========================
+	Copy time: 0ms
+	Quicksort: 9ms and 1076322 operations
+	Bubblesort: 33497ms and -937164370 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 27463 operations
+SampleSize=117000
+=========================
+	Copy time: 0ms
+	Quicksort: 9ms and 1205423 operations
+	Bubblesort: 33187ms and -865481239 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 33209 operations
+SampleSize=118000
+=========================
+	Copy time: 0ms
+	Quicksort: 9ms and 1119469 operations
+	Bubblesort: 33625ms and -819573117 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 97831 operations
+SampleSize=119000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1403417 operations
+	Bubblesort: 35058ms and -744961825 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 90145 operations
+SampleSize=120000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1275467 operations
+	Bubblesort: 35425ms and -697993570 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 87022 operations
+SampleSize=121000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1241338 operations
+	Bubblesort: 35442ms and -638636237 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 23766 operations
+SampleSize=122000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1358703 operations
+	Bubblesort: 35935ms and -571412149 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 29530 operations
+SampleSize=123000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1261722 operations
+	Bubblesort: 37263ms and -510761316 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 42321 operations
+SampleSize=124000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1177900 operations
+	Bubblesort: 38349ms and -443236957 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 3292 operations
+SampleSize=125000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1270926 operations
+	Bubblesort: 39104ms and -387717033 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 63886 operations
+SampleSize=126000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1212235 operations
+	Bubblesort: 39893ms and -325398855 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 43429 operations
+SampleSize=127000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1365449 operations
+	Bubblesort: 40744ms and -255570108 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 109423 operations
+SampleSize=128000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1333911 operations
+	Bubblesort: 40719ms and -198626494 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 65826 operations
+SampleSize=129000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1309109 operations
+	Bubblesort: 41596ms and -136988514 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 50488 operations
+SampleSize=130000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1344163 operations
+	Bubblesort: 41117ms and -72270891 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 34183 operations
+SampleSize=131000
+=========================
+	Copy time: 0ms
+	Quicksort: 10ms and 1180042 operations
+	Bubblesort: 41698ms and 3561401 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 94668 operations
+SampleSize=132000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1344003 operations
+	Bubblesort: 42398ms and 59128339 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 12874 operations
+SampleSize=133000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1340667 operations
+	Bubblesort: 43029ms and 127171622 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 10183 operations
+SampleSize=134000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1452795 operations
+	Bubblesort: 43766ms and 193043746 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 93485 operations
+SampleSize=135000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1367332 operations
+	Bubblesort: 45348ms and 266914017 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 12624 operations
+SampleSize=136000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1283488 operations
+	Bubblesort: 44892ms and 327463312 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 485 operations
+SampleSize=137000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1326337 operations
+	Bubblesort: 45556ms and 397173409 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 70303 operations
+SampleSize=138000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1436007 operations
+	Bubblesort: 46163ms and 462596522 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 51020 operations
+SampleSize=139000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1313633 operations
+	Bubblesort: 46901ms and 515399768 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 7530 operations
+SampleSize=140000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1459794 operations
+	Bubblesort: 47907ms and 598219176 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 23674 operations
+SampleSize=141000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1422737 operations
+	Bubblesort: 48345ms and 675120229 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 29660 operations
+SampleSize=142000
+=========================
+	Copy time: 0ms
+	Quicksort: 11ms and 1456537 operations
+	Bubblesort: 49905ms and 749862157 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 43816 operations
+SampleSize=143000
+=========================
+	Copy time: 0ms
+	Quicksort: 12ms and 1635619 operations
+	Bubblesort: 49424ms and 821842385 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 92603 operations
+SampleSize=144000
+=========================
+	Copy time: 0ms
+	Quicksort: 12ms and 1463988 operations
+	Bubblesort: 50267ms and 895270068 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 72895 operations
+SampleSize=145000
+=========================
+	Copy time: 0ms
+	Quicksort: 12ms and 1598822 operations
+	Bubblesort: 50974ms and 949261109 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 65689 operations
+SampleSize=146000
+=========================
+	Copy time: 0ms
+	Quicksort: 12ms and 1438923 operations
+	Bubblesort: 51669ms and 1034383297 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 24527 operations
+SampleSize=147000
+=========================
+	Copy time: 0ms
+	Quicksort: 12ms and 1566209 operations
+	Bubblesort: 52426ms and 1114462145 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 110228 operations
+SampleSize=148000
+=========================
+	Copy time: 0ms
+	Quicksort: 12ms and 1525099 operations
+	Bubblesort: 53278ms and 1184200166 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 30086 operations
+SampleSize=149000
+=========================
+	Copy time: 0ms
+	Quicksort: 12ms and 1434695 operations
+	Bubblesort: 54667ms and 1244614220 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 100554 operations
+SampleSize=150000
+=========================
+	Copy time: 0ms
+	Quicksort: 12ms and 1490988 operations
+	Bubblesort: 55468ms and 1328858380 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 105544 operations
+SampleSize=151000
+=========================
+	Copy time: 0ms
+	Quicksort: 12ms and 1639972 operations
+	Bubblesort: 55444ms and 1400450789 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 125562 operations
+SampleSize=152000
+=========================
+	Copy time: 0ms
+	Quicksort: 13ms and 1719487 operations
+	Bubblesort: 57545ms and 1478585443 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 826 operations
+SampleSize=153000
+=========================
+	Copy time: 0ms
+	Quicksort: 14ms and 1749019 operations
+	Bubblesort: 58589ms and 1555650058 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 150475 operations
+SampleSize=154000
+=========================
+	Copy time: 0ms
+	Quicksort: 12ms and 1626599 operations
+	Bubblesort: 59066ms and 1615333995 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 122089 operations
+SampleSize=155000
+=========================
+	Copy time: 0ms
+	Quicksort: 13ms and 1645743 operations
+	Bubblesort: 59613ms and 1717448419 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 110838 operations
+SampleSize=156000
+=========================
+	Copy time: 0ms
+	Quicksort: 13ms and 1656268 operations
+	Bubblesort: 60116ms and 1777108106 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 119395 operations
+SampleSize=157000
+=========================
+	Copy time: 0ms
+	Quicksort: 13ms and 1683198 operations
+	Bubblesort: 61572ms and 1855582395 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 30377 operations
+SampleSize=158000
+=========================
+	Copy time: 0ms
+	Quicksort: 13ms and 1648183 operations
+	Bubblesort: 61767ms and 1950551802 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 138677 operations
+SampleSize=159000
+=========================
+	Copy time: 0ms
+	Quicksort: 13ms and 1692476 operations
+	Bubblesort: 62392ms and 2026015745 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 106675 operations
+SampleSize=160000
+=========================
+	Copy time: 0ms
+	Quicksort: 13ms and 1673754 operations
+	Bubblesort: 63571ms and 2108942475 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 31832 operations
+SampleSize=161000
+=========================
+	Copy time: 0ms
+	Quicksort: 13ms and 1813671 operations
+	Bubblesort: 65078ms and -2124246242 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 48119 operations
+SampleSize=162000
+=========================
+	Copy time: 0ms
+	Quicksort: 14ms and 1535532 operations
+	Bubblesort: 65112ms and -2036980390 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 67632 operations
+SampleSize=163000
+=========================
+	Copy time: 0ms
+	Quicksort: 13ms and 1554350 operations
+	Bubblesort: 65078ms and -1953645740 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 90923 operations
+SampleSize=164000
+=========================
+	Copy time: 0ms
+	Quicksort: 14ms and 1789908 operations
+	Bubblesort: 66437ms and -1833324005 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 94656 operations
+SampleSize=165000
+=========================
+	Copy time: 0ms
+	Quicksort: 14ms and 1840932 operations
+	Bubblesort: 67772ms and -1770187469 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 65310 operations
+SampleSize=166000
+=========================
+	Copy time: 0ms
+	Quicksort: 14ms and 1728970 operations
+	Bubblesort: 68428ms and -1711503658 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 83821 operations
+SampleSize=167000
+=========================
+	Copy time: 0ms
+	Quicksort: 14ms and 1904874 operations
+	Bubblesort: 69360ms and -1627671174 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 98953 operations
+SampleSize=168000
+=========================
+	Copy time: 0ms
+	Quicksort: 14ms and 1779943 operations
+	Bubblesort: 70431ms and -1541897648 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 27275 operations
+SampleSize=169000
+=========================
+	Copy time: 0ms
+	Quicksort: 14ms and 1820451 operations
+	Bubblesort: 71424ms and -1451497315 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 79702 operations
+SampleSize=170000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 2072875 operations
+	Bubblesort: 71726ms and -1370444747 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 1580 operations
+SampleSize=171000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1827313 operations
+	Bubblesort: 73242ms and -1271422023 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 140906 operations
+SampleSize=172000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1771631 operations
+	Bubblesort: 74147ms and -1202574572 operations
+	BinarySearch: 0ms and 13 operations
+	Linear Search: 0ms and 86733 operations
+SampleSize=173000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1803216 operations
+	Bubblesort: 74815ms and -1111195461 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 26719 operations
+SampleSize=174000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1751652 operations
+	Bubblesort: 76117ms and -1013501232 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 94991 operations
+SampleSize=175000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1959946 operations
+	Bubblesort: 76411ms and -924942057 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 99769 operations
+SampleSize=176000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1896044 operations
+	Bubblesort: 77536ms and -831977273 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 23454 operations
+SampleSize=177000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1763010 operations
+	Bubblesort: 78102ms and -733444506 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 32068 operations
+SampleSize=178000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1835860 operations
+	Bubblesort: 79128ms and -638550381 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 43827 operations
+SampleSize=179000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1878097 operations
+	Bubblesort: 79857ms and -577767121 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 172721 operations
+SampleSize=180000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1872502 operations
+	Bubblesort: 81498ms and -496167156 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 110347 operations
+SampleSize=181000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1776993 operations
+	Bubblesort: 80788ms and -387511338 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 56357 operations
+SampleSize=182000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1815881 operations
+	Bubblesort: 80337ms and -296906406 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 8120 operations
+SampleSize=183000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1836792 operations
+	Bubblesort: 81129ms and -236955306 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 68554 operations
+SampleSize=184000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1995624 operations
+	Bubblesort: 82127ms and -128040653 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 114120 operations
+SampleSize=185000
+=========================
+	Copy time: 0ms
+	Quicksort: 16ms and 1999841 operations
+	Bubblesort: 83302ms and -55624314 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 49493 operations
+SampleSize=186000
+=========================
+	Copy time: 0ms
+	Quicksort: 15ms and 1869743 operations
+	Bubblesort: 85093ms and 55909383 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 126005 operations
+SampleSize=187000
+=========================
+	Copy time: 0ms
+	Quicksort: 16ms and 2027734 operations
+	Bubblesort: 86656ms and 156744728 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 147102 operations
+SampleSize=188000
+=========================
+	Copy time: 0ms
+	Quicksort: 16ms and 1988988 operations
+	Bubblesort: 88235ms and 263175294 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 98838 operations
+SampleSize=189000
+=========================
+	Copy time: 0ms
+	Quicksort: 16ms and 1958073 operations
+	Bubblesort: 89168ms and 332588028 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 73436 operations
+SampleSize=190000
+=========================
+	Copy time: 0ms
+	Quicksort: 16ms and 2045818 operations
+	Bubblesort: 90339ms and 451190290 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 302 operations
+SampleSize=191000
+=========================
+	Copy time: 0ms
+	Quicksort: 16ms and 2042607 operations
+	Bubblesort: 90925ms and 530723787 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 139010 operations
+SampleSize=192000
+=========================
+	Copy time: 0ms
+	Quicksort: 17ms and 2092315 operations
+	Bubblesort: 91628ms and 644676911 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 18469 operations
+SampleSize=193000
+=========================
+	Copy time: 0ms
+	Quicksort: 16ms and 2058847 operations
+	Bubblesort: 94133ms and 738413814 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 87531 operations
+SampleSize=194000
+=========================
+	Copy time: 0ms
+	Quicksort: 16ms and 2231038 operations
+	Bubblesort: 94196ms and 807901052 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 184754 operations
+SampleSize=195000
+=========================
+	Copy time: 0ms
+	Quicksort: 17ms and 2066545 operations
+	Bubblesort: 95043ms and 904406876 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 73593 operations
+SampleSize=196000
+=========================
+	Copy time: 0ms
+	Quicksort: 17ms and 1996011 operations
+	Bubblesort: 96960ms and 1023325230 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 99379 operations
+SampleSize=197000
+=========================
+	Copy time: 0ms
+	Quicksort: 17ms and 2160094 operations
+	Bubblesort: 96394ms and 1103983495 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 119860 operations
+SampleSize=198000
+=========================
+	Copy time: 0ms
+	Quicksort: 16ms and 2062962 operations
+	Bubblesort: 96177ms and 1222528952 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 16337 operations
+SampleSize=199000
+=========================
+	Copy time: 0ms
+	Quicksort: 16ms and 1937239 operations
+	Bubblesort: 100174ms and 1296036266 operations
+	BinarySearch: 0ms and 12 operations
+	Linear Search: 0ms and 171353 operations
+SampleSize=200000
+=========================
+	Copy time: 0ms
+	Quicksort: 17ms and 2101719 operations
+	Bubblesort: 101661ms and 1403788853 operations
+	BinarySearch: 0ms and 16 operations
+	Linear Search: 0ms and 123029 operations
+SampleSize=201000
+=========================
+	Copy time: 0ms
+	Quicksort: 18ms and 2124162 operations
+	Bubblesort: 102993ms and 1519974492 operations
+	BinarySearch: 0ms and 15 operations
+	Linear Search: 0ms and 176039 operations
+SampleSize=202000
+=========================
+	Copy time: 0ms
+	Quicksort: 18ms and 2247640 operations
+	Bubblesort: 103357ms and 1606061511 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 119983 operations
+SampleSize=203000
+=========================
+	Copy time: 0ms
+	Quicksort: 17ms and 2199578 operations
+	Bubblesort: 104057ms and 1711475517 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 164694 operations
+SampleSize=204000
+=========================
+	Copy time: 0ms
+	Quicksort: 18ms and 2174702 operations
+	Bubblesort: 104409ms and 1802078582 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 4878 operations
+SampleSize=205000
+=========================
+	Copy time: 0ms
+	Quicksort: 18ms and 2394292 operations
+	Bubblesort: 105396ms and 1924538220 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 12451 operations
+SampleSize=206000
+=========================
+	Copy time: 0ms
+	Quicksort: 18ms and 2306493 operations
+	Bubblesort: 106406ms and 2015544154 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 120715 operations
+SampleSize=207000
+=========================
+	Copy time: 0ms
+	Quicksort: 18ms and 2149047 operations
+	Bubblesort: 107386ms and 2104716484 operations
+	BinarySearch: 0ms and 17 operations
+	Linear Search: 0ms and 34818 operations
+SampleSize=208000
+=========================
+	Copy time: 0ms
+	Quicksort: 18ms and 2069524 operations
+	Bubblesort: 108484ms and -2061733834 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 171047 operations
+SampleSize=209000
+=========================
+	Copy time: 0ms
+	Quicksort: 18ms and 2241614 operations
+	Bubblesort: 109535ms and -1967170901 operations
+	BinarySearch: 0ms and 18 operations
+	Linear Search: 0ms and 103779 operations

@@ -1,16 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Lab 1",
-    "\\Lab 1\\src",
-    "\\lab 3",
-    "\\lab 3\\ssuds",
-    "\\lab 3\\ssuds\\include",
-    "\\lab 3\\ssuds\\src",
-    "\\Lab 4",
     "\\Lab 4\\ssuds",
-    "\\Lab 4\\ssuds\\src"
+    "\\Lab 4\\ssuds\\include",
+    "\\Lab 4\\ssuds\\src",
+    "\\Lab_5",
+    "\\Lab_5\\ssuds",
+    "\\Lab_5\\ssuds\\build",
+    "\\Lab_5\\ssuds\\build\\vs2022",
+    "\\Lab_5\\ssuds\\include"
   ],
-  "SelectedNode": "\\Lab 4\\ssuds\\include\\array_list_utilities.h",
+  "SelectedNode": "\\Lab_5\\ssuds\\include\\linked_list.h",
   "PreviewInSolutionExplorer": false
 }

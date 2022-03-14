@@ -57,7 +57,7 @@ namespace ssuds
 
 			}
 
-			bool operator!=(const ArrayListIterator& other) const
+			bool operator != (const ArrayListIterator& other) const
 			{
 				// Are we not equal to this other iterator?
 

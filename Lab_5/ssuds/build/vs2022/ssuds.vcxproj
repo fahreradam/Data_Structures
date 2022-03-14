@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\array_list_tests.cpp" />
+    <ClCompile Include="..\..\src\linked_list_tests.cpp" />
     <ClCompile Include="..\..\src\ssuds.cpp" />
   </ItemGroup>
   <ItemGroup>

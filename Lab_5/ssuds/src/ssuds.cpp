@@ -8,6 +8,7 @@
 #include <vector>
 #include <gtest/gtest.h>
 #include <chrono>
+#include <linked_list.h>
 
 
 
@@ -16,33 +17,42 @@
 
 // Just a silly class to test that our ArrayList is fully templatized.  I put it here rather than
 // in the google tests, just so you can see.
-class Foo
-{
-protected:
-    int value;
-    std::string name;
-public:
-    //Foo() : value(0), name("") {}           // <- must have to be used in ArrayList
-    Foo(int v, std::string n) : value(v), name(n) {}
-    int get_value() const { return value; }
-    std::string get_name() const { return name; }
-};
-
-// This isn't a templated class, so we have more flexibility in defining the stream operator
-std::ostream& operator<<(std::ostream& os, const Foo& f)
-{
-    os << "{Foo:" << f.get_name() << "-" << f.get_value() << "}";
-    return os;
-}
-
-
-
+//class Foo
+//{
+//protected:
+//    int value;
+//    std::string name;
+//public:
+//    //Foo() : value(0), name("") {}           // <- must have to be used in ArrayList
+//    Foo(int v, std::string n) : value(v), name(n) {}
+//    int get_value() const { return value; }
+//    std::string get_name() const { return name; }
+//};
+//
+//// This isn't a templated class, so we have more flexibility in defining the stream operator
+//std::ostream& operator<<(std::ostream& os, const Foo& f)
+//{
+//    os << "{Foo:" << f.get_name() << "-" << f.get_value() << "}";
+//    return os;
+//}
+//
+//
+//
 int main()
 {
-
-
-    ssuds::ArrayList<float> testing = { 3.2, 4.5, 9.3, 11.4, 15.6, 18.9, 22.7, 29.0, 33.1, 37.4, 42.1 };
-    std::cout << ssuds::find_binary_search(testing, ssuds::SortOrder::ASCENDING, 3.6f) << std::endl;
+    ssuds::LinkedList<float> list;
+    list.append(45.2f);
+    std::cout << list;
+    
+    
+    
+    
+    
+    
+//
+//
+//    ssuds::ArrayList<float> testing = { 3.2, 4.5, 9.3, 11.4, 15.6, 18.9, 22.7, 29.0, 33.1, 37.4, 42.1 };
+//    std::cout << ssuds::find_binary_search(testing, ssuds::SortOrder::ASCENDING, 3.6f) << std::endl;
 
     // My simple, informal testing (I'm not using google tests here:-( )
 

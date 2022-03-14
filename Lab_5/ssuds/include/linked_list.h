@@ -72,5 +72,28 @@ namespace ssuds
 				i++
 			}
 		}
+
+		int size()
+		{
+			return mSize;
+		}
+
+		friend std::ostream& operator <<(std::ostream& os, const LinkedList<T>& alist)
+		{
+			os << "[";
+			Node* cur = mStart;
+			int i = 0;
+			while (cur != nullptr)
+			{
+				os << alist[i];
+				if (i < alist.size() - 1)
+					os << ", ";
+				
+				i++;
+			}
+
+			os << "]";
+			return os;
+		}
 	};
 }

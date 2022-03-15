@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Lab 4",
     "\\Lab 4\\ssuds",
     "\\Lab 4\\ssuds\\include",
     "\\Lab 4\\ssuds\\src",
@@ -10,6 +11,6 @@
     "\\Lab_5\\ssuds\\build\\vs2022",
     "\\Lab_5\\ssuds\\include"
   ],
-  "SelectedNode": "\\Lab_5\\ssuds\\include\\linked_list.h",
+  "SelectedNode": "\\Lab_5\\ssuds\\build\\vs2022\\ssuds.sln",
   "PreviewInSolutionExplorer": false
 }

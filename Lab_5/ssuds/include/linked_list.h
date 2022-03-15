@@ -25,16 +25,21 @@ namespace ssuds
 		class LinkedListIterator
 		{
 		protected:
-			const LinkedList& mLinkedList;
+			const LinkedList* mLinkedList;
 			Node* mCurPos;
 			LinkedListIteratorType mType;
 			friend class LinkedList;
 			int CurIndex;
 			
 		public:
+			LinkedListIterator() : mType(LinkedListIteratorType::forward), CurIndex(0), mCurPos(nullptr), mLinkedList(nullptr)
+			{
+
+			}
 			
-			LinkedListIterator(const LinkedList& arr, LinkedListIteratorType tp, int start_index, Node* position) : mCurPos(position), mLinkedList(arr), mType(tp), CurIndex(0)
+			LinkedListIterator(const LinkedList& arr, LinkedListIteratorType tp, int start_index, Node* position) : mCurPos(position), mLinkedList(arr), mType(tp), CurIndex(start_index)
 			{	}
+
 			bool operator==(const LinkedListIterator& other) const
 			{
 				return &mLinkedList == &other.mLinkedList && mCurPos == other.mCurPos;
@@ -74,6 +79,45 @@ namespace ssuds
 			// empty, on purpose
 		}
 
+		LinkedList(const LinkedList& other) : mStart(nullptr), mEnd(nullptr), mSize(0) // Copy Constructor
+		{
+			Node* other_cur = other.mStart;
+	
+			while (other_cur != nullptr)
+			{
+				append(other_cur->mData);
+				other_cur = other_cur->mNext;
+			}
+		}
+		
+		LinkedList(std::initializer_list<T> ilist) : mSize(0), mStart(nullptr), mEnd(nullptr) // Initializer-list constructor
+		{
+			for (T val : ilist)
+			{
+				append(val);
+			}
+		}
+
+		LinkedList(const LinkedList&& other) : mSize(other.mSize), mEnd(other.mEnd), mStart(other.mStart)
+		{
+			Node* other_cur = other.mStart;
+			Node* cur = mStart;
+			
+			whille(other_cur != nullptr)
+			{
+				Node* temp = other_cur->mNext;
+				cur->mData = other_cur->mData;
+				other_cur->mData = NULL;
+				other_cur->mPrev = nullptr;
+				other_cur->mNext = nullptr;
+				cur = cur->mNext;
+				other_cur = other_cur->mNext;
+
+			}
+			other.mStart = nullptr;
+			other.mEnd = nullptr;
+		}
+
 		~LinkedList()
 		{
 			Node* cur = mStart;
@@ -87,12 +131,12 @@ namespace ssuds
 
 		LinkedListIterator begin() const
 		{
-			return LinkedListIterator(*this, LinkedListIteratorType::forward, mStart)
+			return LinkedListIterator(*this, LinkedListIteratorType::forward, mStart);
 		}
 
 		LinkedListIterator end() const
 		{
-			return LinkedListIterator(*this, LinkedListIteratorType::backward, mEnd)
+			return LinkedListIterator(*this, LinkedListIteratorType::backward, mEnd);
 		}
 
 		void append(const T& new_val)
@@ -145,13 +189,45 @@ namespace ssuds
 			mSize++;
 		}
 
+		int size() const
+		{
+			return mSize;
+		}
+
+		void clear()
+		{
+			Node* cur = mStart;
+			while (cur != nullptr)
+			{
+				Node* temp = cur->mNext;
+				delete cur;
+				cur = temp;
+			}
+			mSize = nullptr;
+			mEnd = nullptr;
+			mSize = 0;
+		}
+
+		LinkedListIterator find(T search_val)
+		{
+			Node* cur = mStart;
+			int i = 0;
+			while (cur != nullptr)
+			{
+				if (cur->mData == search_val)
+					return LinkedListIterator(*this, LinkedListIteratorType::forward, i, cur);
+				cur = cur->mNext;
+				i++;
+			}
+			return this->end();
+		}
+
 		T& operator[] (int index) const
 		{
 			if (index >= mSize || index < 0)
 				throw std::out_of_range("Invalid index: " + std::to_string(index));
 			else
 			{
-				}
 				Node* cur = mStart;
 				int i = 0;
 				while (cur != nullptr)
@@ -163,11 +239,17 @@ namespace ssuds
 				}
 			}
 		}
-
-		int size() const
+		LinkedList<T>& operator= (const LinkedList<T>& other)
 		{
-			return mSize;
+			clear();
+			Node* other_cur = other.mStart;
+			while (other_cur != nullptr)
+			{
+				append(other_cur->mData);
+			}
+			return *this;
 		}
+		
 
 		friend std::ostream& operator <<(std::ostream& os, const LinkedList<T>& alist)
 		{

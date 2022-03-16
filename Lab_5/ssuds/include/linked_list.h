@@ -63,9 +63,24 @@ namespace ssuds
 					CurIndex--;
 				}
 			}
+
+			void operator++(int dummy)
+			{
+				if (mType == LinkedListIteratorType::forward)
+				{
+					mCurPos->mNext;
+					CurIndex++;
+				}
+				else
+				{
+					mCurPos->mPrev;
+					CurIndex--;
+				}
+			}
+
 			T& operator*()
 			{
-				return mLinkedList->mData;	
+				return mCurPos->mData;	
 			}
 			int index()
 			{
@@ -98,24 +113,19 @@ namespace ssuds
 			}
 		}
 
-		LinkedList(const LinkedList&& other) : mSize(other.mSize), mEnd(other.mEnd), mStart(other.mStart)
+		LinkedList(LinkedList&& other) : mStart(other.mStart), mEnd(other.mEnd), mSize(other.mSize) // Move Constructor
 		{
 			Node* other_cur = other.mStart;
 			Node* cur = mStart;
-			
-			whille(other_cur != nullptr)
+
+			while (other_cur != nullptr)
 			{
-				Node* temp = other_cur->mNext;
 				cur->mData = other_cur->mData;
-				other_cur->mData = NULL;
-				other_cur->mPrev = nullptr;
-				other_cur->mNext = nullptr;
 				cur = cur->mNext;
 				other_cur = other_cur->mNext;
-
 			}
-			other.mStart = nullptr;
 			other.mEnd = nullptr;
+			other.mStart = nullptr;
 		}
 
 		~LinkedList()
@@ -129,15 +139,15 @@ namespace ssuds
 			}
 		}
 
-		LinkedListIterator begin() const
-		{
-			return LinkedListIterator(*this, LinkedListIteratorType::forward, mStart);
-		}
+		//LinkedListIterator begin() 
+		//{
+		//	return LinkedListIterator(*this, LinkedListIteratorType::forward, mStart);
+		//}
 
-		LinkedListIterator end() const
-		{
-			return LinkedListIterator(*this, LinkedListIteratorType::backward, mEnd);
-		}
+		//LinkedListIterator end() 
+		//{
+		//	return LinkedListIterator(*this, LinkedListIteratorType::backward, mEnd);
+		//}
 
 		void append(const T& new_val)
 		{
@@ -188,6 +198,33 @@ namespace ssuds
 			}
 			mSize++;
 		}
+		
+		void insert(int index, const T& val)
+		{
+			if (index < 0 || index >= mSize)
+				throw std::out_of_range("Invalid index: " + std::to_string(index));
+			if (index == 0 || mSize == 0)
+				prepend(val);
+			else if (index == mSize)
+				append(val);
+			else
+			{
+				Node* node_node = new Node;
+				node_node->mData = val;
+				Node* cur = mStart;
+				int curPos = 0;
+				while (curPos != index && cur != nullptr)
+				{
+					cur = cur->mNext;
+					curPos++;
+				}
+				node_node->mNext = cur;
+				node_node->mPrev = cur->mPrev;
+				cur->mPrev->mNext = node_node;
+				cur->mPrev = node_node;
+				mSize++;
+			}
+		}
 
 		int size() const
 		{
@@ -203,23 +240,19 @@ namespace ssuds
 				delete cur;
 				cur = temp;
 			}
-			mSize = nullptr;
+			mStart = nullptr;
 			mEnd = nullptr;
 			mSize = 0;
 		}
 
 		LinkedListIterator find(T search_val)
 		{
-			Node* cur = mStart;
-			int i = 0;
-			while (cur != nullptr)
-			{
-				if (cur->mData == search_val)
-					return LinkedListIterator(*this, LinkedListIteratorType::forward, i, cur);
-				cur = cur->mNext;
-				i++;
-			}
-			return this->end();
+			return find(*this, LinkedListIteratorType::foward, 0, mStart);
+		}
+		LinkedListIterator find(LinkedListIterator llist)
+		{
+			int temp = llist->CurIndex;
+			llist->CurIndex = 0;
 		}
 
 		T& operator[] (int index) const

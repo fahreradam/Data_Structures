@@ -1,9 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\lab 3",
-    "\\lab 3\\ssuds",
-    "\\lab 3\\ssuds\\src",
     "\\Lab 4",
     "\\Lab 4\\ssuds",
     "\\Lab 4\\ssuds\\src",
@@ -11,8 +8,9 @@
     "\\Lab_5\\ssuds",
     "\\Lab_5\\ssuds\\build",
     "\\Lab_5\\ssuds\\build\\vs2022",
-    "\\Lab_5\\ssuds\\include"
+    "\\Lab_5\\ssuds\\include",
+    "\\Lab_5\\ssuds\\src"
   ],
-  "SelectedNode": "\\lab 3\\ssuds\\src\\TestArraylist.cpp",
+  "SelectedNode": "\\Lab_5\\ssuds\\src\\linked_list_tests.cpp",
   "PreviewInSolutionExplorer": false
 }

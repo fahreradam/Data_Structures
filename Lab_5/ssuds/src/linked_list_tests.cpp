@@ -57,6 +57,24 @@ TEST(LinkedListIteratorTest, IterationTest)
 
 	it++;
 	EXPECT_EQ(it != ilist.end(), false);
+
+	// Testing rbegin
+	ilist.clear();
+	ilist.append(4);
+	ilist.append(5);
+	ilist.append(6);
+	it = ilist.rbegin();
+
+	EXPECT_EQ(*it, 6);
+
+	it++;
+	EXPECT_EQ(*it, 5);
+
+	++it;
+	EXPECT_EQ(*it, 4);
+
+	it++;
+	EXPECT_EQ(it != ilist.rend(), false);
 }
 
 ssuds::LinkedList<int>func()

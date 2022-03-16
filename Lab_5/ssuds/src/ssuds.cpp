@@ -39,11 +39,7 @@
 //
 //
 int main()
-{
-    ssuds::LinkedList<float> list;
-    list.append(45.2f);
-    std::cout << list;
-    
+{   
     testing::InitGoogleTest();
     RUN_ALL_TESTS();
     

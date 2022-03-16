@@ -146,7 +146,17 @@ namespace ssuds
 
 		LinkedListIterator end() const
 		{
-			return LinkedListIterator(LinkedListIteratorType::backward, mSize, nullptr);
+			return LinkedListIterator(LinkedListIteratorType::forward, mSize, nullptr);
+		}
+
+		LinkedListIterator rbegin() const
+		{
+			return LinkedListIterator(LinkedListIteratorType::backward, mSize-1, mEnd);
+		}
+
+		LinkedListIterator rend() const
+		{
+			return LinkedListIterator(LinkedListIteratorType::backward, -1, nullptr);
 		}
 
 		void append(const T& new_val)

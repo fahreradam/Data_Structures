@@ -25,24 +25,24 @@ namespace ssuds
 		class LinkedListIterator
 		{
 		protected:
-			const LinkedList* mLinkedList;
+
 			Node* mCurPos;
 			LinkedListIteratorType mType;
 			friend class LinkedList;
 			int CurIndex;
 			
 		public:
-			LinkedListIterator() : mType(LinkedListIteratorType::forward), CurIndex(0), mCurPos(nullptr), mLinkedList(nullptr)
+			LinkedListIterator() : mType(LinkedListIteratorType::forward), CurIndex(0), mCurPos(nullptr)
 			{
 
 			}
 			
-			LinkedListIterator(const LinkedList& arr, LinkedListIteratorType tp, int start_index, Node* position) : mCurPos(position), mLinkedList(arr), mType(tp), CurIndex(start_index)
+			LinkedListIterator(LinkedListIteratorType tp, int start_index, Node* position) : mCurPos(position), mType(tp), CurIndex(start_index)
 			{	}
 
 			bool operator==(const LinkedListIterator& other) const
 			{
-				return &mLinkedList == &other.mLinkedList && mCurPos == other.mCurPos;
+				return mCurPos == other.mCurPos;
 			}
 
 			bool operator !=(const LinkedListIterator& other) const
@@ -54,12 +54,12 @@ namespace ssuds
 			{
 				if (mType == LinkedListIteratorType::forward)
 				{
-					mCurPos->mNext;
+					mCurPos = mCurPos->mNext;
 					CurIndex++;
 				}
 				else
 				{
-					mCurPos->mPrev;
+					mCurPos = mCurPos->mPrev;
 					CurIndex--;
 				}
 			}
@@ -68,12 +68,12 @@ namespace ssuds
 			{
 				if (mType == LinkedListIteratorType::forward)
 				{
-					mCurPos->mNext;
+					mCurPos = mCurPos->mNext;
 					CurIndex++;
 				}
 				else
 				{
-					mCurPos->mPrev;
+					mCurPos = mCurPos->mPrev;
 					CurIndex--;
 				}
 			}
@@ -139,15 +139,15 @@ namespace ssuds
 			}
 		}
 
-		//LinkedListIterator begin() 
-		//{
-		//	return LinkedListIterator(*this, LinkedListIteratorType::forward, mStart);
-		//}
+		LinkedListIterator begin() const
+		{
+			return LinkedListIterator(LinkedListIteratorType::forward, 0, mStart);
+		}
 
-		//LinkedListIterator end() 
-		//{
-		//	return LinkedListIterator(*this, LinkedListIteratorType::backward, mEnd);
-		//}
+		LinkedListIterator end() const
+		{
+			return LinkedListIterator(LinkedListIteratorType::backward, mSize, nullptr);
+		}
 
 		void append(const T& new_val)
 		{
@@ -247,12 +247,19 @@ namespace ssuds
 
 		LinkedListIterator find(T search_val)
 		{
-			return find(*this, LinkedListIteratorType::foward, 0, mStart);
+			return find(search_val, LinkedListIterator(LinkedListIteratorType::forward, 0, mStart));
 		}
-		LinkedListIterator find(LinkedListIterator llist)
+
+		LinkedListIterator find(T search_val, LinkedListIterator llist)
 		{
-			int temp = llist->CurIndex;
-			llist->CurIndex = 0;
+			while (llist.mCurPos != nullptr)
+			{
+				if (llist.mCurPos->mData == search_val)
+					return (llist);
+				llist.mCurPos = llist.mCurPos->mNext;
+				llist.CurIndex++;
+			}
+			return end();
 		}
 
 		T& operator[] (int index) const
@@ -272,6 +279,7 @@ namespace ssuds
 				}
 			}
 		}
+
 		LinkedList<T>& operator= (const LinkedList<T>& other)
 		{
 			clear();
@@ -282,7 +290,6 @@ namespace ssuds
 			}
 			return *this;
 		}
-		
 
 		friend std::ostream& operator <<(std::ostream& os, const LinkedList<T>& alist)
 		{

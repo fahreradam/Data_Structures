@@ -17,43 +17,54 @@ TEST(LinkedListTests, LinkedListTests)
 	ASSERT_EQ(ss.str(), "[5.5, 3.3, 5.3]");
 }
 
-//TEST_F(LinkedListTestFixture, LinkedListIteratorFind)
-//{
-//	ssuds::LinkedList<int> ilist{ 1, 5, 7, 13, 18, 22, 25, 30, 22, 38 };
-//	ssuds::LinkedList<int>::LinkedListIterator it = ilist.find(22);
-//	std::cout << *it << " " << it.index() << std::endl;      // 22   5
-//	++it;
-//	std::cout << *it << " " << it.index() << std::endl;      // 25   6
-//	it = ilist.find(it);
-//	std::cout << *it << " " << it.index() << std::endl;      // 22   8
-//	++it;
-//	it = ilist.find(it);
-//	std::cout << (it != ilist.end()) << std::endl;              // false (they are equal)
-//}
+TEST(LinkedListIterationTest, LinkedListIteratorFind)
+{
+	ssuds::LinkedList<int> ilist{ 1, 5, 7, 13, 18, 22, 25, 30, 22, 38 };
+	ssuds::LinkedList<int>::LinkedListIterator it = ilist.find(22);
+	EXPECT_EQ(*it, 22);
+	EXPECT_EQ(it.index(), 5);
+	++it;
+	EXPECT_EQ(*it, 25);
+	EXPECT_EQ(it.index(), 6);
+	it = ilist.find(22, it);
+	EXPECT_EQ(*it, 22);
+	EXPECT_EQ(it.index(), 8);
 
-//TEST(LinkedListIteratorTest, IterationTest)
-//{
-//	// Testing begin
-//	ssuds::LinkedList<int> ilist;
-//	ssuds::LinkedList<int>::LinkedListIterator it = ilist.begin();
-//
-//	EXPECT_EQ(it != ilist.end(), false);
-//
-//	ilist.append(4);
-//	ilist.append(5);
-//	ilist.append(6);
-//	it = ilist.begin();
-//	EXPECT_EQ(*it, 4);
-//
-//	it++;
-//	EXPECT_EQ(*it, 5);
-//
-//	it++;
-//	EXPECT_EQ(*it, 6);
-//
-//	it++;
-//	EXPECT_EQ(it != ilist.end(), false);
-//}
+	++it;
+	it = ilist.find(22, it);
+	EXPECT_EQ(it != ilist.end(), false);
+}
+
+TEST(LinkedListIteratorTest, IterationTest)
+{
+	// Testing begin
+	ssuds::LinkedList<int> ilist;
+	ssuds::LinkedList<int>::LinkedListIterator it = ilist.begin();
+
+	EXPECT_EQ(it != ilist.end(), false);
+
+	ilist.append(4);
+	ilist.append(5);
+	ilist.append(6);
+	it = ilist.begin();
+	EXPECT_EQ(*it, 4);
+
+	it++;
+	EXPECT_EQ(*it, 5);
+
+	it++;
+	EXPECT_EQ(*it, 6);
+
+	it++;
+	EXPECT_EQ(it != ilist.end(), false);
+}
+
+ssuds::LinkedList<int>func()
+{
+	ssuds::LinkedList<int>temp;
+	temp.append(42);
+	return temp;
+}
 
 TEST(LinkedListTests, Constructors)
 {
@@ -66,6 +77,11 @@ TEST(LinkedListTests, Constructors)
 
 	EXPECT_NE(ss.str(), "[2]"); // Will fail
 	EXPECT_EQ(ss.str(), "[4]");
+	ss.str(std::string());
+
+	ssuds::LinkedList<int> c = func(); // calls move constructor
+	ss << c;
+	EXPECT_EQ(ss.str(), "[42]");
 	ss.str(std::string());
 
 	ssuds::LinkedList<int> d = { 1, 2, 3, 4 }; // calls initialize_list constructor
@@ -132,10 +148,5 @@ TEST(ArrayListTests, BracketOperator)
 	EXPECT_EQ(result, 1);
 
 }
-ssuds::LinkedList<int>func()
-{
-	ssuds::LinkedList<int>temp;
-	temp.append(42);
-	return temp;
-}
+
 

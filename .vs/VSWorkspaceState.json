@@ -3,12 +3,12 @@
     "",
     "\\Lab 4",
     "\\Lab 4\\ssuds",
+    "\\Lab 4\\ssuds\\include",
     "\\Lab 4\\ssuds\\src",
     "\\Lab_5",
     "\\Lab_5\\ssuds",
     "\\Lab_5\\ssuds\\build",
     "\\Lab_5\\ssuds\\build\\vs2022",
-    "\\Lab_5\\ssuds\\include",
     "\\Lab_5\\ssuds\\src"
   ],
   "SelectedNode": "\\Lab_5\\ssuds\\src\\linked_list_tests.cpp",

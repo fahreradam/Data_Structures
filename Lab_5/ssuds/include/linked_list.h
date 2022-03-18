@@ -9,47 +9,56 @@ namespace ssuds
 	class LinkedList
 	{
 	protected:
+		/// Making Node Class
 		class Node		// Important design goal: user should not be aware Node exists!
 		{
+		/// Attributes of Node
 		public:
 			T mData;
 			Node* mNext;// Pointer to the following node (NULL if there is none)
 			Node* mPrev;// Similar for preceding.  This makes our Llist a doubly-linked list.
 		};
-
+		/// Attributes of LinkedList
 		Node* mStart;   // Sometimes called the head
 		Node* mEnd;     // Sometimes called the tail
 		int mSize;     // Number of nodes
 
 	public:
+
+		/// Making the LinkedListIterator
 		class LinkedListIterator
 		{
+		/// Attributes of LinkedListIterator
 		protected:
-
 			Node* mCurPos;
 			LinkedListIteratorType mType;
 			friend class LinkedList;
 			int CurIndex;
 			
 		public:
+			/// LinkedListIterator Defaul Constructor
 			LinkedListIterator() : mType(LinkedListIteratorType::forward), CurIndex(0), mCurPos(nullptr)
 			{
 
 			}
-			
+
+			/// LinkedListIterator Constructor (Used most of the time) 
 			LinkedListIterator(LinkedListIteratorType tp, int start_index, Node* position) : mCurPos(position), mType(tp), CurIndex(start_index)
 			{	}
 
+			/// Overloaded == operator
 			bool operator==(const LinkedListIterator& other) const
 			{
 				return mCurPos == other.mCurPos;
 			}
 
+			/// Overloaded != operator 
 			bool operator !=(const LinkedListIterator& other) const
 			{
 				return !(*this == other);
 			}
 
+			/// overloaded ++ operator for iteratoring the iterator
 			void operator++()
 			{
 				if (mType == LinkedListIteratorType::forward)
@@ -64,6 +73,8 @@ namespace ssuds
 				}
 			}
 
+
+			/// Overloaded ++ operator incase the iterator is on the other side if the ++  
 			void operator++(int dummy)
 			{
 				if (mType == LinkedListIteratorType::forward)
@@ -78,6 +89,7 @@ namespace ssuds
 				}
 			}
 
+			/// Returns the current value that mCurPos is at  
 			T& operator*()
 			{
 				return mCurPos->mData;	
@@ -89,11 +101,13 @@ namespace ssuds
 		};
 
 	public:
+		/// LinkedList default constructor
 		LinkedList() : mStart(nullptr), mEnd(nullptr), mSize(0)
 		{
 			// empty, on purpose
 		}
 
+		/// LinkedList Copy Constructor 
 		LinkedList(const LinkedList& other) : mStart(nullptr), mEnd(nullptr), mSize(0) // Copy Constructor
 		{
 			Node* other_cur = other.mStart;
@@ -105,6 +119,7 @@ namespace ssuds
 			}
 		}
 		
+		/// LinkedList Initializer-list constructor 
 		LinkedList(std::initializer_list<T> ilist) : mSize(0), mStart(nullptr), mEnd(nullptr) // Initializer-list constructor
 		{
 			for (T val : ilist)
@@ -113,6 +128,7 @@ namespace ssuds
 			}
 		}
 
+		/// LinkedList Move Constructor 
 		LinkedList(LinkedList&& other) : mStart(other.mStart), mEnd(other.mEnd), mSize(other.mSize) // Move Constructor
 		{
 			Node* other_cur = other.mStart;
@@ -128,6 +144,7 @@ namespace ssuds
 			other.mStart = nullptr;
 		}
 
+		/// LinkedList deconstructor
 		~LinkedList()
 		{
 			Node* cur = mStart;
@@ -139,26 +156,31 @@ namespace ssuds
 			}
 		}
 
+		/// Returns an iterator at the begining of the linked list 
 		LinkedListIterator begin() const
 		{
 			return LinkedListIterator(LinkedListIteratorType::forward, 0, mStart);
 		}
 
+		/// Returns an iterator at the null pointer in the end of the LinkedList
 		LinkedListIterator end() const
 		{
 			return LinkedListIterator(LinkedListIteratorType::forward, mSize, nullptr);
 		}
 
+		/// Return an iterator at the end of an LinkedList and allows reverse iteration 
 		LinkedListIterator rbegin() const
 		{
 			return LinkedListIterator(LinkedListIteratorType::backward, mSize-1, mEnd);
 		}
 
+		/// Returns an iterator at the null pointer in the begining of the LinkedList 
 		LinkedListIterator rend() const
 		{
 			return LinkedListIterator(LinkedListIteratorType::backward, -1, nullptr);
 		}
 
+		/// adds a given type T value to the end of the LinkedList 
 		void append(const T& new_val)
 		{
 			// ... make a new (disconnected) node
@@ -184,6 +206,7 @@ namespace ssuds
 			mSize++;
 		}
 
+		/// adds a given type T value to the begining of the LinkedList 
 		void prepend(const T& new_val)
 		{
 			// ... make a new (disconnected) node
@@ -209,6 +232,7 @@ namespace ssuds
 			mSize++;
 		}
 		
+		/// inserts a given type T value into a designated index in the LinkedList 
 		void insert(int index, const T& val)
 		{
 			if (index < 0 || index >= mSize)
@@ -236,6 +260,7 @@ namespace ssuds
 			}
 		}
 
+		/// Returns an int that is the current size of the LinkedList 
 		int size() const
 		{
 			return mSize;
@@ -255,11 +280,13 @@ namespace ssuds
 			mSize = 0;
 		}
 
+		/// Returns an LinkListIterator that holds the position at the requested value if there
 		LinkedListIterator find(T search_val)
 		{
 			return find(search_val, LinkedListIterator(LinkedListIteratorType::forward, 0, mStart));
 		}
 
+		/// Returns an LinkListIterator that holds the position at the requested value if there
 		LinkedListIterator find(T search_val, LinkedListIterator llist)
 		{
 			while (llist.mCurPos != nullptr)
@@ -272,6 +299,7 @@ namespace ssuds
 			return end();
 		}
 
+		/// Overloaded [] operator which returns the mData to the given index 
 		T& operator[] (int index) const
 		{
 			if (index >= mSize || index < 0)
@@ -290,6 +318,7 @@ namespace ssuds
 			}
 		}
 
+		/// Overloaded = operator
 		LinkedList<T>& operator= (const LinkedList<T>& other)
 		{
 			clear();
@@ -301,6 +330,7 @@ namespace ssuds
 			return *this;
 		}
 
+		/// Overloaded stream operator for std::cout 
 		friend std::ostream& operator <<(std::ostream& os, const LinkedList<T>& alist)
 		{
 			os << "[";

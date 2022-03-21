@@ -3,14 +3,13 @@
     "",
     "\\Lab 4",
     "\\Lab 4\\ssuds",
-    "\\Lab 4\\ssuds\\include",
     "\\Lab 4\\ssuds\\src",
-    "\\Lab_5",
-    "\\Lab_5\\ssuds",
-    "\\Lab_5\\ssuds\\build",
-    "\\Lab_5\\ssuds\\build\\vs2022",
-    "\\Lab_5\\ssuds\\src"
+    "\\Lab 6",
+    "\\Lab 6\\ssuds",
+    "\\Lab 6\\ssuds\\build",
+    "\\Lab 6\\ssuds\\build\\vs2022",
+    "\\Lab 6\\ssuds\\include"
   ],
-  "SelectedNode": "\\Lab_5\\ssuds\\src\\linked_list_tests.cpp",
+  "SelectedNode": "\\Lab 6\\ssuds\\include\\order_set.h",
   "PreviewInSolutionExplorer": false
 }

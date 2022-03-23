@@ -146,6 +146,18 @@ namespace ssuds
 			
 			int get_height_recursive()
 			{
+				int R, L = 0;
+				if (mLeft)
+				{
+					mLeft->get_height_recursive();
+					L++;
+				}
+				if (mRight)
+				{
+					mRight->get_height_recursive();
+					R++;
+				}
+
 
 			}
 

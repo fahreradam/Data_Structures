@@ -1,4 +1,6 @@
 #include <array_list.h>
+#include <fstream>
+#include <vector>
 
 namespace ssuds
 {
@@ -83,7 +85,7 @@ namespace ssuds
 				//    equiv. to (3 + 4) - (2 * 3)   -- a pre-order language
 			}
 
-			void traversal_recursive(ssuds::ArrayList<T> alist, NodeType tp)
+			void traversal_recursive(ssuds::ArrayList<T>& alist, NodeType tp)
 			{
 				if (tp == NodeType::Pre)
 				{
@@ -141,6 +143,27 @@ namespace ssuds
 					mRight->clear_recursive();
 				}
 			}
+			
+			int get_height_recursive()
+			{
+
+			}
+
+			bool erase_recursive(const T& val)
+			{
+				if (mData < val)
+				{
+					return mRight->erase_recursive(val);
+				}
+				if (mData > val)
+				{
+					return mLeft->erase_recursive(val);
+				}
+				if (mData == val)
+				{
+					return true;
+				}
+			}
 		};
 
 		Node* mRoot;
@@ -171,7 +194,7 @@ namespace ssuds
 			}
 		}
 
-		void traversal(ssuds::ArrayList<T> alist, NodeType tp)
+		void traversal(ssuds::ArrayList<T>& alist, NodeType tp)
 		{
 			if (mRoot)
 			{
@@ -202,6 +225,31 @@ namespace ssuds
 		bool contains(const T& val)
 		{
 			return mRoot->contains_recursive(val);
+		}
+
+		//void rebalace()
+		//{
+		//	ssuds::ArrayList<T> alist;
+		//	traversal(alist, NodeType::In_Order);
+		//	clear();
+		//	
+		//	for (int size = alist.size(); mSize < 10;)
+		//	{
+		//		if (mSize > 0)
+
+		//		else
+		//			insert(alist[size / 2]);
+		//	}
+		//}
+
+		int get_height(Node * )
+		{
+
+		}
+
+		bool erase(const T& val)
+		{
+
 		}
 	};
 }

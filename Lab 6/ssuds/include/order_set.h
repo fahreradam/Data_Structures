@@ -151,18 +151,30 @@ namespace ssuds
 
 			bool erase_recursive(const T& val)
 			{
+				if (mData == val)
+				{
+					return true;
+				}
 				if (mData < val)
 				{
-					return mRight->erase_recursive(val);
+					if (mRight->erase_recursive(val))
+					{
+						if (mRight->mRight == nullptr && mRight->mLeft == nullptr)
+							delete mRight;
+						if (mRight->mRight == nullptr && !mRight->mLeft == nullptr)
+						{
+							Node* temp = mRight->mLeft;
+							delete mRight;
+							mRight = temp;
+						}
+						if ()
+					}
 				}
 				if (mData > val)
 				{
 					return mLeft->erase_recursive(val);
 				}
-				if (mData == val)
-				{
-					return true;
-				}
+
 			}
 		};
 

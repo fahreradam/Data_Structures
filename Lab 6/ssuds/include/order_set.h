@@ -146,19 +146,23 @@ namespace ssuds
 			
 			int get_height_recursive()
 			{
-				int R, L = 0;
+				// I couldn't for the life of me understand how to formate this method so I did research a bit to understand it
+				// https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
+
 				if (mLeft)
-				{
-					mLeft->get_height_recursive();
-					L++;
-				}
+					int L = mLeft->get_height_recursive();
+				else
+					return -1;
+
 				if (mRight)
-				{
-					mRight->get_height_recursive();
-					R++;
-				}
+					int R = mRight->get_height_recursive();
+				else
+					return -1;
 
-
+				if (L > R)
+					return (++L);
+				else
+					return (++R);
 			}
 
 			bool erase_recursive(const T& val)
@@ -251,24 +255,23 @@ namespace ssuds
 			return mRoot->contains_recursive(val);
 		}
 
-		//void rebalace()
-		//{
-		//	ssuds::ArrayList<T> alist;
-		//	traversal(alist, NodeType::In_Order);
-		//	clear();
-		//	
-		//	for (int size = alist.size(); mSize < 10;)
-		//	{
-		//		if (mSize > 0)
-
-		//		else
-		//			insert(alist[size / 2]);
-		//	}
-		//}
-
-		int get_height(Node * )
+		void rebalance()
+		{
+			ssuds::ArrayList<T> alist;
+			traversal(alist, NodeType::In_Order);
+			clear();
+			rebalance_recursive(0, (alist.size() / 2) - 1, alist);
+			rebalance_recursive((alist.size() / 2) + 1, alist.size(), alist);
+			
+		}
+		void rebalance_recursive(strating_point, end_point, ssuds::ArrayList alist)
 		{
 
+		}
+
+		int, int get_height()
+		{
+			return (mRoot->mLeft.get_height_recursive()++, mRoot->mRight.get_height_recursive()++);
 		}
 
 		bool erase(const T& val)

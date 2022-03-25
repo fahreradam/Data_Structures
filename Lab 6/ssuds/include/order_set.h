@@ -148,16 +148,14 @@ namespace ssuds
 			{
 				// I couldn't for the life of me understand how to formate this method so I did research a bit to understand it
 				// https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
+				int R = 0
+				int	L = 0
 
 				if (mLeft)
-					int L = mLeft->get_height_recursive();
-				else
-					return -1;
+					L = mLeft->get_height_recursive();
 
 				if (mRight)
-					int R = mRight->get_height_recursive();
-				else
-					return -1;
+					R = mRight->get_height_recursive();
 
 				if (L > R)
 					return (++L);
@@ -165,7 +163,7 @@ namespace ssuds
 					return (++R);
 			}
 
-			bool erase_recursive(const T& val)
+			bool erase_recursive(const T& val, Node*& next)
 			{
 				if (mData == val)
 				{
@@ -176,20 +174,58 @@ namespace ssuds
 					if (mRight->erase_recursive(val))
 					{
 						if (mRight->mRight == nullptr && mRight->mLeft == nullptr)
+						{
 							delete mRight;
-						if (mRight->mRight == nullptr && !mRight->mLeft == nullptr)
+							mRight = nullptr;
+						}
+						if (mRight->mRight == nullptr && mRight->mLeft)
 						{
 							Node* temp = mRight->mLeft;
 							delete mRight;
-							mRight = temp;
+							next = temp;
+							return True;
 						}
-						if ()
+						if (mRight->mRight && mRight->mLeft)
+						{
+							Node* temp = mRight;
+							while (temp->mLeft)
+							{
+								temp = temp->mLeft;
+							}
+							mRight->mData = temp->mData;
+							return mRight->erase_recursive(temp->mData, next);
+						}
 					}
 				}
 				if (mData > val)
 				{
-					return mLeft->erase_recursive(val);
+					if (mLeft->erase_recursive(val))
+					{
+						if (mLeft->mRight == nullptr && mLeft->mLeft == nullptr)
+						{
+							delete mLeft;
+							mLeft = nullptr;
+						}
+						if (mLeft->mRight == nullptr && mLeft->mLeft)
+						{
+							Node* temp = mLeft->mLeft;
+							delete mLeft;
+							next = temp;
+							return True;
+						}
+						if (mLeft->mRight && mLeft->mLeft)
+						{
+							Node* temp = mLeft;
+							while (temp->mLeft)
+							{
+								temp = temp->mLeft;
+							}
+							mLeft->mData = temp->mData;
+							return mLeft->erase_recursive(temp->mData, next);
+						}
+					}
 				}
+				
 
 			}
 		};
@@ -260,18 +296,24 @@ namespace ssuds
 			ssuds::ArrayList<T> alist;
 			traversal(alist, NodeType::In_Order);
 			clear();
-			rebalance_recursive(0, (alist.size() / 2) - 1, alist);
-			rebalance_recursive((alist.size() / 2) + 1, alist.size(), alist);
+			mRoot = rebalance_recursive(0, (alist.size() - 1), alist);
 			
 		}
-		void rebalance_recursive(strating_point, end_point, ssuds::ArrayList alist)
+		void rebalance_recursive(int strating_point, int end_point, ssuds::ArrayList alist)
 		{
+			int mid = (strating_point + end_point) / 2;
 
+			if (starting_point >= end_point)
+				return;
+
+			insert(alist[mid]);
+			rebalance_recursive(strating_point, mid--, alist);
+			rebalance_recursive(mid++, end_point, alist);
 		}
 
-		int, int get_height()
+		int get_height()
 		{
-			return (mRoot->mLeft.get_height_recursive()++, mRoot->mRight.get_height_recursive()++);
+			return (mRoot->get_height_recursive());
 		}
 
 		bool erase(const T& val)

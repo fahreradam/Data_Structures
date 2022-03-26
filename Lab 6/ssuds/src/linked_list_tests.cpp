@@ -1,8 +1,8 @@
 #include <linked_list.h>
 #include <gtest/gtest.h>
 
-#define EXECUTE_LINKED_LIST_TESTS 1
-#if EXECUTE_LINKED_LIST_TESTS
+#define EXECUTE_LINKED_LIST_TESTS 2
+#if EXECUTE_LINKED_LIST_TESTS == 1
 
 class LinkedListTestFixture : public ::testing::Test
 {

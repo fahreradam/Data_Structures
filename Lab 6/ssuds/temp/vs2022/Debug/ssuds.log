@@ -1,4 +1,2 @@
-﻿  main.cpp
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab 6\ssuds\include\order_set.h(208,3): error C2760: syntax error: '}' was unexpected here; expected ';'
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab 6\ssuds\include\order_set.h(234): message : see reference to class template instantiation 'ssuds::OrderedSet<T>' being compiled
-C:\Users\Adam\Documents\Coding\Data_Structures\Lab 6\ssuds\include\order_set.h(225,5): error C2760: syntax error: 'else' was unexpected here; expected 'statement'
+﻿  order_set_tests.cpp
+  ssuds.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\Lab 6\ssuds\bin\vs2022\Debug\ssuds_d.exe

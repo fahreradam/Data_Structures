@@ -14,6 +14,7 @@
     <ClCompile Include="..\..\src\array_list_tests.cpp" />
     <ClCompile Include="..\..\src\linked_list_tests.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\order_set_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\array_list.h" />

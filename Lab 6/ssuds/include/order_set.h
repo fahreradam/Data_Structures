@@ -1,8 +1,6 @@
 #include <array_list.h>
 #include <fstream>
-#include <vector>
-
-
+#include <stack>
 namespace ssuds
 {
 	enum class NodeType { Pre, Post, In_Order };
@@ -14,14 +12,17 @@ namespace ssuds
 		class Node
 		{
 		public:
+			/// Node Attributes
 			T mData;
 			Node* mLeft;
 			Node* mRight;
 			ssuds::NodeType mType;
 
-			Node(const T& val) : mData(val), mLeft(nullptr),
+			/// Node Class Constructor 
+			Node(const T& val) : mData(val), mLeft(nullptr), mType(ssuds::NodeType::In_Order),
 				mRight(nullptr) {}
 
+			/// Recursive insert method 
 			int insert_recursive(const T& val)
 			{
 				if (val < mData)
@@ -65,6 +66,7 @@ namespace ssuds
 				}
 			}
 
+			/// Recursive Method that prints everything in the OrderSet
 			void print_all_recursive()
 			{
 				// If we had the tree on slide 11, we would
@@ -84,6 +86,8 @@ namespace ssuds
 
 			}
 
+			/// Recersive Method For Traversal that fulls a given ArrayList
+			/// in the order of the given NodeType
 			void traversal_recursive(ssuds::ArrayList<T>& alist, NodeType tp)
 			{
 				if (tp == NodeType::Pre)
@@ -116,6 +120,7 @@ namespace ssuds
 				}
 			}
 
+			/// Recursive Clear Method
 			void clear_recursive()
 			{
 				if (mLeft)
@@ -130,6 +135,8 @@ namespace ssuds
 				}
 			}
 
+			/// Recursive Method that returns a bool whether the 
+			/// given value is in the orderset or not 
 			bool contains_recursive(const T& val)
 			{
 				if (mData == val)
@@ -146,6 +153,8 @@ namespace ssuds
 					return false;
 			}
 			
+			/// Reclusive Method that return an int that is the 
+			// size of the lowest point in the orderset, (the root counts as 1 level deep)  
 			int get_height_recursive()
 			{
 				// I couldn't for the life of me understand how to formate this method so I did research a bit to understand it
@@ -165,69 +174,12 @@ namespace ssuds
 					return (++R);
 			}
 
+			/// Recursive Method that can remove three types of node
+			/// Leaf Node - no children
+			/// Node with one child
+			/// Node with two children
 			Node* erase_recursive(const T& val, bool& erased)
-			{
-				//if (mData == val)
-				//{
-				//	return true;
-				//}
-				//if (mData < val)
-				//{
-				//	if (mRight->erase_recursive(val))
-				//	{
-				//		if (mRight->mRight == nullptr && mRight->mLeft == nullptr)
-				//		{
-				//			delete mRight;
-				//			mRight = nullptr;
-				//		}
-				//		if (mRight->mRight == nullptr && mRight->mLeft)
-				//		{
-				//			Node* temp = mRight->mLeft;
-				//			delete mRight;
-				//			next = temp;
-				//			return True;
-				//		}
-				//		if (mRight->mRight && mRight->mLeft)
-				//		{
-				//			Node* temp = mRight;
-				//			while (temp->mLeft)
-				//			{
-				//				temp = temp->mLeft;
-				//			}
-				//			mRight->mData = temp->mData;
-				//			return mRight->erase_recursive(temp->mData, next);
-				//		}
-				//	}
-				//}
-				//if (mData > val)
-				//{
-				//	if (mLeft->erase_recursive(val))
-				//	{
-				//		if (mLeft->mRight == nullptr && mLeft->mLeft == nullptr)
-				//		{
-				//			delete mLeft;
-				//			mLeft = nullptr;
-				//		}
-				//		if (mLeft->mRight == nullptr && mLeft->mLeft)
-				//		{
-				//			Node* temp = mLeft->mLeft;
-				//			delete mLeft;
-				//			next = temp;
-				//			return True;
-				//		}
-				//		if (mLeft->mRight && mLeft->mLeft)
-				//		{
-				//			Node* temp = mLeft;
-				//			while (temp->mLeft)
-				//			{
-				//				temp = temp->mLeft;
-				//			}
-				//			mLeft->mData = temp->mData;
-				//			return mLeft->erase_recursive(temp->mData, next);
-				//		}
-				//	}
-				//}
-				
+			{				
 				if (this == nullptr)
 				{
 					erased = false;
@@ -268,20 +220,124 @@ namespace ssuds
 				return this;
 			}
 		};
+	public:
+		// REFERENCE: https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/
+		class OrderedSetIterator
+		{
+		protected:
+			/// OrderSetIterator Attributes
+			Node* mCurrent;
+			std::stack<Node*> mNodeStack;
 
+			// bool used to track if the first iteration has been done
+			// used for checking if right side iteration is possible. 
+			// this isn't what I wanted to do, but I couldn't find another solution
+			bool first_it;
+
+		public:
+			/// Iterator Constructor 
+			OrderedSetIterator(Node* root) : mCurrent(root), first_it(false)
+			{
+
+			}
+
+			/// Overloaded ++ operator
+			/// used for iterating through the orderset
+			void operator++()
+			{
+				if (first_it)
+					mCurrent = mCurrent->mRight;
+				if (mCurrent || mNodeStack.empty() == false)
+				{
+					while (mCurrent)
+					{
+						mNodeStack.push(mCurrent);
+						mCurrent = mCurrent->mLeft;
+					}
+					mCurrent = mNodeStack.top();
+					mNodeStack.pop();
+					if (first_it == false)
+						first_it = true;
+				}
+			}
+
+			/// Overloaded ++ operator 
+			/// an addition dummy argument that is used for right sided ++ 
+			/// used for iterating through the orderset
+			void operator++(int dummy)
+			{
+				
+				if (first_it)
+					mCurrent = mCurrent->mRight;
+				if (mCurrent || mNodeStack.empty() == false)
+				{
+					while (mCurrent)
+					{
+						mNodeStack.push(mCurrent);
+						mCurrent = mCurrent->mLeft;
+					}
+					mCurrent = mNodeStack.top();
+					mNodeStack.pop();	
+					if (first_it == false)
+						first_it = true;
+				}
+
+			}
+
+			/// Returns the value of the current node 
+			T& operator*()
+			{
+				return mCurrent->mData;
+			}
+
+			/// Overloaded != operator 
+			bool operator != (const OrderedSetIterator& other)
+			{
+				return (mCurrent != other.mCurrent) || (mNodeStack != other.mNodeStack);
+			}
+
+			/// Overloaded == operator 
+			bool operator ==(const OrderedSetIterator& other)
+			{
+				return (mCurrent == other.mCurrent) && (mNodeStack == other.mNodeStack);
+			}
+		};
+
+
+
+
+	protected:
+		/// OrderSet Attributes
 		Node* mRoot;
 		int mSize;
 
 	public:
+		/// OrderSet Default constructor
 		OrderedSet() : mRoot(nullptr), mSize(0) {}
 
+		/// OrderSet deconstructor
 		~OrderedSet()
 		{
 			// super-important!!
 			clear();
 		}
 
-		// The user is calling this method
+		/// Returns an OrderSetIterator at the begining of the set 
+		OrderedSetIterator begin()
+		{
+			return OrderedSetIterator(mRoot);
+		}
+
+		/// Returns an OrderSetIterator at a nullptr after the last value in the set
+		OrderedSetIterator end()
+		{
+			Node* temp = mRoot->mRight;
+			while (temp)
+				temp = temp->mRight;
+			return OrderedSetIterator(temp);
+		}
+
+		/// Called by the user to begin the recursive insert method 
 		void insert(const T& val)
 		{
 			if (mRoot)
@@ -297,6 +353,7 @@ namespace ssuds
 			}
 		}
 
+		/// Called by the user to begin the recursive traversal method 
 		void traversal(ssuds::ArrayList<T>& alist, NodeType tp)
 		{
 			if (mRoot)
@@ -306,18 +363,20 @@ namespace ssuds
 			}
 		}
 
-
+		/// Called by the user to begin the recursive print_all method
 		void print_all()
 		{
 			if (mRoot)
 				mRoot->print_all_recursive();
 		}
 
+		/// returns the current size of the set 
 		int size()
 		{
 			return mSize;
 		}
 
+		/// Called by the user to begin the recursive clear method
 		void clear()
 		{
 			mRoot->clear_recursive();
@@ -326,12 +385,14 @@ namespace ssuds
 			mSize = 0;
 		}
 
+		/// Called by the user to begin the recursive contains method 
 		bool contains(const T& val)
 		{
 			bool con = false;
 			return mRoot->contains_recursive(val);
 		}
 
+		/// Called by the user to begin the recusive rebalance method
 		void rebalance()
 		{
 			ssuds::ArrayList<T> alist;
@@ -340,6 +401,9 @@ namespace ssuds
 			rebalance_recursive(0, alist.size() - 1, alist);
 		}
 
+	/// Privated because we don't want the user to potentially call this 
+	private:
+		/// Recursive rebalance method used to reoganize the OrderSet to get an optimal set 
 		void rebalance_recursive(int starting_point, int end_point, ssuds::ArrayList<T> alist)
 		{
 			int mid = (starting_point + end_point) / 2;
@@ -350,14 +414,16 @@ namespace ssuds
 			insert(alist[mid]);
 			rebalance_recursive(starting_point, mid-1, alist);
 			rebalance_recursive(mid+1, end_point, alist);
-
 		}
-
+	public:
+		/// Called by the user to return the given value of the recursive get_height method 
 		int get_height()
 		{
 			return (mRoot->get_height_recursive());
 		}
 
+		/// Called by the user to begin the recersive earse method
+		/// returns whether not the node was erased from the set
 		bool erase(const T& val)
 		{
 			bool erased = false;

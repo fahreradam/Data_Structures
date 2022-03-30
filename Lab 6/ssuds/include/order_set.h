@@ -1,6 +1,7 @@
 #include <array_list.h>
 #include <fstream>
 #include <stack>
+#include <iostream>
 namespace ssuds
 {
 	enum class NodeType { Pre, Post, In_Order };

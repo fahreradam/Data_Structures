@@ -94,8 +94,35 @@ namespace ssuds
 				key++;
 			}
 			if (mTable[key]->first != the_key)
-				return false
+				return false;
+			else
+			{
+				ssuds::ArrayList<std::pair<K, V>> alist;
 
+				while (key >= 0 && mTable[key])
+				{
+					alist.append(*mTable[key]);
+					delete mTable[key];
+					mTable[key] = nullptr;
+					key--;
+				}
+				key = (hasher(the_key) % mCapacity) + 1 ;
+				
+				while (key < mCapacity && mTable[key])
+				{
+	
+					alist.append(*mTable[key]);
+					delete mTable[key];
+					mTable[key] = nullptr;
+					key++;
+				}
+
+				for (int i = 0; i < alist.size(); i++)
+				{
+					if (alist[i].first != the_key)
+						(*this)[alist[i].first] = alist[i].second;
+				}
+			}
 			delete mTable[key];
 			return true;
 		}

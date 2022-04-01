@@ -11,6 +11,32 @@ namespace ssuds
 	template <class K, class V>
 	class UnorderedMap
 	{
+	/*public:
+		class UnorderedMapIterator
+		{
+		protected:
+			const UnorderedMap& mUnordedMap;
+			int mPosition;
+
+		public:
+			UnorderedMapIterator(const UnorderedMap& uom, int pos) : mUnordedMap(uom), mPosition(pos)
+			{
+
+			}
+
+			bool operator++()
+			{
+				mPosition++;
+			}
+			bool operator++(int dummy)
+			{
+				mPosition++;
+			}
+			std::pair<K, V>* operator()
+			{
+				return 
+			}
+		};*/
 		// What does a single key-value pair look like?
 		// 1. std::pair<K, V>
 		// 2. custom (hidden) Node class that contains a K and V attribute
@@ -36,11 +62,11 @@ namespace ssuds
 		// in the destructor
 		~UnorderedMap()
 		{
-			for (int i = 0; i > mCapacity; i++)
+			for (int i = 0; i < mCapacity; i++)
 			{
 				delete mTable[i];
 			}
-			delete[] mTable;
+			delete[] mTable; 
 		}
 
 		V& operator[](const K& the_key)
@@ -66,6 +92,8 @@ namespace ssuds
 				mTable[key] = new std::pair<K, V>;		// not setting the value!
 				mTable[key]->first = the_key;
 				mSize++;
+				if (float(mSize) / mCapacity > 0.7)
+					key = grow(the_key);
 				return mTable[key]->second;
 			}
 			else			
@@ -73,6 +101,8 @@ namespace ssuds
 				return mTable[key]->second;
 			}
 		}
+
+
 
 		int size() const
 		{
@@ -127,6 +157,16 @@ namespace ssuds
 			return true;
 		}
 
+		void clear()
+		{
+			for (int i = 0; i < mCapacity; i++)
+			{
+				delete mTable[i];
+			}
+			delete[] mTable;
+			mSize = 0;
+		}
+
 		friend std::ostream& operator << (std::ostream& os, const UnorderedMap<K,V>& umap)
 		{
 			os << "{";
@@ -143,7 +183,26 @@ namespace ssuds
 			os << "}";
 			return os;
 		}
+	protected:
+		size_t grow(const K& the_key)
+		{
+			mCapacity *= 2;
 
+			std::pair<K, V>** temp = new std::pair<K,V>*[mCapacity];
+			temp = mTable;
+			delete[] mTable;
+			mTable = new std::pair<K, V>*[mCapacity * 2];
+			memset(mTable, 0, sizeof(std::pair<K, V>*) * mCapacity);
+			for (int i = 0; i < mCapacity / 2; i++)
+			{
+				if (temp[i])
+				{
+					(*this)[temp[i]->first] = temp[i]->second;
+				}
+			}
+			
+			return hasher(the_key) % mCapacity;
+		}
 	};
 
 

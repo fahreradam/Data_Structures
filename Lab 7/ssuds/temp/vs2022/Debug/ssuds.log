@@ -1,2 +1,39 @@
-﻿  unordered_map_tests.cpp
-  ssuds.vcxproj -> C:\Users\afahrer2\source\repos\fahreradam\Data_Structures\Lab 7\ssuds\bin\vs2022\Debug\ssuds_d.exe
+﻿  main.cpp
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\include\unordered_map.h(192,1): error C2440: '=': cannot convert from 'std::pair<K,V> **' to 'std::pair<K,V> ***'
+          with
+          [
+              K=int,
+              V=int
+          ]
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\include\unordered_map.h(192,12): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\include\unordered_map.h(188): message : while compiling class template member function 'size_t ssuds::UnorderedMap<int,int>::grow(const K &)'
+          with
+          [
+              K=int
+          ]
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\include\unordered_map.h(96): message : see reference to function template instantiation 'size_t ssuds::UnorderedMap<int,int>::grow(const K &)' being compiled
+          with
+          [
+              K=int
+          ]
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\src\main.cpp(12): message : see reference to class template instantiation 'ssuds::UnorderedMap<int,int>' being compiled
+  unordered_map_tests.cpp
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\include\unordered_map.h(192,1): error C2440: '=': cannot convert from 'std::pair<K,V> **' to 'std::pair<K,V> ***'
+          with
+          [
+              K=std::string,
+              V=int
+          ]
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\include\unordered_map.h(192,12): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\include\unordered_map.h(188): message : while compiling class template member function 'size_t ssuds::UnorderedMap<std::string,int>::grow(const K &)'
+          with
+          [
+              K=std::string
+          ]
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\include\unordered_map.h(96): message : see reference to function template instantiation 'size_t ssuds::UnorderedMap<std::string,int>::grow(const K &)' being compiled
+          with
+          [
+              K=std::string
+          ]
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\src\unordered_map_tests.cpp(7): message : see reference to class template instantiation 'ssuds::UnorderedMap<std::string,int>' being compiled
+  Generating Code...

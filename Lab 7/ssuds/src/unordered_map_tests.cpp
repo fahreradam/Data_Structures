@@ -2,7 +2,7 @@
 #include <unordered_map.h>
 #include <ostream>
 
-TEST(UnorderedMapTests, BracketOperator)
+TEST(UnorderedMapTests, Methods)
 {
 	ssuds::UnorderedMap<std::string, int> ulist;
 	std::stringstream ss;
@@ -22,4 +22,6 @@ TEST(UnorderedMapTests, BracketOperator)
 	ss.str("");
 	ss << ulist;
 	ASSERT_EQ(ss.str(), "{khjgertjnu:8934, steve:60}");
+
+	ulist["ges"] = 468;
 }

@@ -72,6 +72,8 @@ namespace ssuds
 		V& operator[](const K& the_key)
 		{
 			// Run the_key through our hash generator to get a hash code
+			if (float(mSize) / mCapacity >= 0.70)
+				grow();
 			size_t key = hasher(the_key);
 			key = key % mCapacity;
 			// Modulo that hash_code with mCapacity to get the desired spot
@@ -92,8 +94,6 @@ namespace ssuds
 				mTable[key] = new std::pair<K, V>;		// not setting the value!
 				mTable[key]->first = the_key;
 				mSize++;
-				if (float(mSize) / mCapacity > 0.7)
-					key = grow(the_key);
 				return mTable[key]->second;
 			}
 			else			
@@ -150,10 +150,13 @@ namespace ssuds
 				for (int i = 0; i < alist.size(); i++)
 				{
 					if (alist[i].first != the_key)
+					{
 						(*this)[alist[i].first] = alist[i].second;
+					}
 				}
 			}
 			delete mTable[key];
+			mSize--;
 			return true;
 		}
 
@@ -170,13 +173,17 @@ namespace ssuds
 		friend std::ostream& operator << (std::ostream& os, const UnorderedMap<K,V>& umap)
 		{
 			os << "{";
+			int j = 0;
 			for (int i = 0; i < umap.capacity(); i++)
 			{
 				if (umap.mTable[i])
 				{
-					os << umap.mTable[i]->first << ":" << umap.mTable[i]->second;
-					if (umap.mTable[i+1] && i < umap.capacity()-1)
+					os << umap.mTable[i]->first << ":" << umap.mTable[i]->second;		
+					if (j < umap.size()-1 && i < umap.capacity() - 1)
+					{
 						os << ", ";
+						j++;
+					}
 
 				}
 			}
@@ -184,24 +191,24 @@ namespace ssuds
 			return os;
 		}
 	protected:
-		size_t grow(const K& the_key)
+		void grow()
 		{
-			mCapacity *= 2;
-
 			std::pair<K, V>** temp = new std::pair<K,V>*[mCapacity];
 			temp = mTable;
-			delete[] mTable;
-			mTable = new std::pair<K, V>*[mCapacity * 2];
+			int temp_size = mSize;
+
+			mCapacity *= 2;
+			mTable = new std::pair<K, V>*[mCapacity];
+
 			memset(mTable, 0, sizeof(std::pair<K, V>*) * mCapacity);
-			for (int i = 0; i < mCapacity / 2; i++)
+			mSize = 0;
+			for (int i = 0; i < temp_size-1; i++)
 			{
 				if (temp[i])
 				{
 					(*this)[temp[i]->first] = temp[i]->second;
 				}
 			}
-			
-			return hasher(the_key) % mCapacity;
 		}
 	};
 

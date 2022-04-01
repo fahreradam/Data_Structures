@@ -24,4 +24,12 @@ TEST(UnorderedMapTests, Methods)
 	ASSERT_EQ(ss.str(), "{khjgertjnu:8934, steve:60}");
 
 	ulist["ges"] = 468;
+
+	ssuds::UnorderedMap<int, int> test_list;
+	for (int i = 0; i < 10; i++)
+		test_list[i] = i;
+	
+	ASSERT_EQ(test_list.size(), 10);
+	ASSERT_EQ(test_list.capacity(), 20);
+
 }

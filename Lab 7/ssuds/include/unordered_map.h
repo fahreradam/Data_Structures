@@ -11,7 +11,7 @@ namespace ssuds
 	template <class K, class V>
 	class UnorderedMap
 	{
-	/*public:
+	public:
 		class UnorderedMapIterator
 		{
 		protected:
@@ -24,19 +24,23 @@ namespace ssuds
 
 			}
 
-			bool operator++()
+			void operator++()
 			{
 				mPosition++;
+				while(mUnordedMap.mTable[mPosition] == nullptr)
+					mPosition++;
 			}
-			bool operator++(int dummy)
+			void operator++(int dummy)
 			{
 				mPosition++;
+				while (mUnordedMap.mTable[mPosition] == nullptr)
+					mPosition++;
 			}
-			std::pair<K, V>* operator()
+			std::pair<K, V>* operator*()
 			{
-				return 
+				return mUnordedMap.mTable[mPosition];
 			}
-		};*/
+		};
 		// What does a single key-value pair look like?
 		// 1. std::pair<K, V>
 		// 2. custom (hidden) Node class that contains a K and V attribute
@@ -67,6 +71,15 @@ namespace ssuds
 				delete mTable[i];
 			}
 			delete[] mTable; 
+		}
+
+		UnorderedMapIterator begin()
+		{
+			return UnorderedMapIterator(*this, 0);
+		}
+		UnorderedMapIterator end()
+		{
+			return UnorderedMapIterator(*this, mCapacity);
 		}
 
 		V& operator[](const K& the_key)
@@ -152,6 +165,7 @@ namespace ssuds
 					if (alist[i].first != the_key)
 					{
 						(*this)[alist[i].first] = alist[i].second;
+						mSize--;
 					}
 				}
 			}
@@ -174,7 +188,7 @@ namespace ssuds
 		{
 			os << "{";
 			int j = 0;
-			for (int i = 0; i < umap.capacity(); i++)
+			for (int i = 0; i < umap.capacity()-1; i++)
 			{
 				if (umap.mTable[i])
 				{
@@ -202,7 +216,7 @@ namespace ssuds
 
 			memset(mTable, 0, sizeof(std::pair<K, V>*) * mCapacity);
 			mSize = 0;
-			for (int i = 0; i < temp_size-1; i++)
+			for (int i = 0; i < temp_size; i++)
 			{
 				if (temp[i])
 				{

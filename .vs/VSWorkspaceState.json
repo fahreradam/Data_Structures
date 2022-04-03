@@ -8,8 +8,10 @@
     "\\Lab 7\\ssuds",
     "\\Lab 7\\ssuds\\build",
     "\\Lab 7\\ssuds\\build\\vs2022",
-    "\\Lab 7\\ssuds\\include"
+    "\\Lab 7\\ssuds\\include",
+    "\\Lab 7\\ssuds\\src",
+    "\\Lab_2"
   ],
-  "SelectedNode": "\\Lab 7\\ssuds\\include\\unordered_map.h",
+  "SelectedNode": "\\Lab 4\\ssuds\\src\\ssuds.cpp",
   "PreviewInSolutionExplorer": false
 }

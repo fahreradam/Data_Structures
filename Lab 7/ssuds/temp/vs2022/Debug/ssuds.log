@@ -1,4 +1,14 @@
-﻿  main.cpp
-  unordered_map_tests.cpp
-  Generating Code...
-  ssuds.vcxproj -> C:\Users\fahre\OneDrive\Documents\GitHub\Data_Structures\Lab 7\ssuds\bin\vs2022\Debug\ssuds_d.exe
+﻿  unordered_map_tests.cpp
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\include\unordered_map.h(258,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\include\unordered_map.h(247): message : while compiling class template member function 'ssuds::UnorderedMap<std::string,float>::UnorderedMapIterator ssuds::UnorderedMap<std::string,float>::find(const K)'
+          with
+          [
+              K=std::string
+          ]
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\src\unordered_map_tests.cpp(94): message : see reference to function template instantiation 'ssuds::UnorderedMap<std::string,float>::UnorderedMapIterator ssuds::UnorderedMap<std::string,float>::find(const K)' being compiled
+          with
+          [
+              K=std::string
+          ]
+C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\src\unordered_map_tests.cpp(54): message : see reference to class template instantiation 'ssuds::UnorderedMap<std::string,float>' being compiled
+  ssuds.vcxproj -> C:\Users\Adam\Documents\Coding\Data_Structures\Lab 7\ssuds\bin\vs2022\Debug\ssuds_d.exe

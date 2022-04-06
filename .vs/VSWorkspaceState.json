@@ -1,17 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Lab 4",
-    "\\Lab 4\\ssuds",
-    "\\Lab 4\\ssuds\\src",
-    "\\Lab 7",
-    "\\Lab 7\\ssuds",
-    "\\Lab 7\\ssuds\\build",
-    "\\Lab 7\\ssuds\\build\\vs2022",
-    "\\Lab 7\\ssuds\\include",
-    "\\Lab 7\\ssuds\\src",
-    "\\Lab_2"
+    "\\Lab 1",
+    "\\Lab 1\\include",
+    "\\Lab 1\\src",
+    "\\Lab 8",
+    "\\Lab 8\\ssuds",
+    "\\Lab 8\\ssuds\\build",
+    "\\Lab 8\\ssuds\\build\\vs2022",
+    "\\Lab 8\\ssuds\\include"
   ],
-  "SelectedNode": "\\Lab 4\\ssuds\\src\\ssuds.cpp",
+  "SelectedNode": "\\Lab 8\\ssuds\\build\\vs2022\\ssuds.sln",
   "PreviewInSolutionExplorer": false
 }

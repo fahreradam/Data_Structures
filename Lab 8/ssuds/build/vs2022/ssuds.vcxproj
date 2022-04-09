@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\array_list_tests.cpp" />
+    <ClCompile Include="..\..\src\level.cpp" />
     <ClCompile Include="..\..\src\linked_list_tests.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\unordered_map_tests.cpp" />
@@ -19,7 +20,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\array_list.h" />
     <ClInclude Include="..\..\include\array_list_utility.h" />
-    <ClInclude Include="..\..\include\graphs.h" />
+    <ClInclude Include="..\..\include\level.h" />
     <ClInclude Include="..\..\include\linked_list.h" />
     <ClInclude Include="..\..\include\unordered_map.h" />
     <ClInclude Include="..\..\include\ordered_set.h" />

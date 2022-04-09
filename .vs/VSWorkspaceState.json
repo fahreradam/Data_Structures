@@ -2,14 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\Lab 1",
-    "\\Lab 1\\include",
     "\\Lab 1\\src",
+    "\\Lab 4",
+    "\\Lab 4\\ssuds",
+    "\\Lab 4\\ssuds\\src",
     "\\Lab 8",
     "\\Lab 8\\ssuds",
     "\\Lab 8\\ssuds\\build",
     "\\Lab 8\\ssuds\\build\\vs2022",
     "\\Lab 8\\ssuds\\include"
   ],
-  "SelectedNode": "\\Lab 8\\ssuds\\build\\vs2022\\ssuds.sln",
+  "SelectedNode": "\\Lab 4\\ssuds\\src\\ssuds.cpp",
   "PreviewInSolutionExplorer": false
 }

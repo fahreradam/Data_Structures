@@ -7,10 +7,15 @@ class Level
 {
 	class LevelNode
 	{
+	public:
 		std::string mName;
 		int mX, mY, mRadius;
 	};
 
 protected:
-	std::map<std::_Invoker_strategy, std::map<std::string, bool>> the_graph;
+	std::map<std::string, std::map<LevelNode, float>> the_graph;
+
+public:
+	Level();
+	void load_map_file(std::string fname);
 };
